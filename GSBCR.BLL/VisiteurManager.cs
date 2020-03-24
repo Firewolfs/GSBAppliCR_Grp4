@@ -76,10 +76,19 @@ namespace GSBCR.BLL
         /// </summary>
         /// <param name="m">matricule Visiteur</param>
         /// <returns>List<RAPPORT_VISITE>/returns>
-        public static List<RAPPORT_VISITE> ChargerRapportVisiteurFinis(String m)
-        {
-            //A faire : charger les rapports terminés (état = 2 ou 3) du visiteur
-            return null;
+        public static List<RAPPORT_VISITE> ChargerRapportVisiteurFinis(String m) {
+            List<RAPPORT_VISITE> lr;
+
+            List<string> lm = new List<string>();
+            List<int> le = new List<int>();
+
+            lm.Add(m);
+            le.Add(2);
+            le.Add(3);
+
+            lr = new RapportVisiteDAO().FindByEtatEtVisiteur(lm, le);
+
+            return lr;
         }
         
         /// <summary>
@@ -160,7 +169,9 @@ namespace GSBCR.BLL
         /// </summary>
         public static PRATICIEN ChargerLePraticien(Int16 pranum)
         {
-            return null;
+            // A faire
+            PRATICIEN prat = new PratricienDAO().FindById(pranum);
+            return prat;
         }
     }
 }
