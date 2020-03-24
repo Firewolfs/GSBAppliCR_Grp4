@@ -146,6 +146,7 @@ namespace GSBCR.BLL
         /// </summary>
         public static PRATICIEN ChargerLePraticien(Int16 pranum)
         {
+            // A faire
             return null;
         }
     }
