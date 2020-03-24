@@ -10,6 +10,8 @@ namespace GSBCR.BLL
 {
     public static class VisiteurManager
     {
+
+
          /// <summary>
         /// Permet de charger un visiteur à partir de son login et mot de passe
         /// </summary>
@@ -25,6 +27,8 @@ namespace GSBCR.BLL
                 return null;
 
         }
+
+
         /// <summary>
         /// Permet de charger la dernière affectation du visiteur
         /// et donc son profil (visiteur, délégué, responsabe secteur) et sa région
@@ -36,6 +40,8 @@ namespace GSBCR.BLL
             VAFFECTATION vaff = new VaffectationDAO().FindByMatricule(matricule);
             return vaff;
         }
+
+
         /// <summary>
         /// Permet de charger les rapports non terminés du visiteur (état 1)
         /// </summary>
@@ -51,6 +57,8 @@ namespace GSBCR.BLL
             lr = new RapportVisiteDAO().FindByEtatEtVisiteur(lm, le);
             return lr;
         }
+
+
         /// <summary>
         /// Permet de charger un rapport de visite
         /// </summary>
@@ -62,6 +70,7 @@ namespace GSBCR.BLL
             RAPPORT_VISITE r = new RapportVisiteDAO().FindById(m, n);
             return r;
         }
+
         /// <summary>
         /// Permet de charger les rapports terminés du visiteur (état 2 et 3) 
         /// </summary>
@@ -107,6 +116,7 @@ namespace GSBCR.BLL
             }
 
         }
+
         /// <summary>
         /// Permet de charger un médicament à partir de son nom de dépot légal
         /// </summary>
@@ -116,6 +126,7 @@ namespace GSBCR.BLL
             MEDICAMENT l = new MedicamentDAO().FindById(depot);
             return l;
         }
+
         /// <summary>
         /// Permet de charger tous les médicaments
         /// </summary>
@@ -124,6 +135,7 @@ namespace GSBCR.BLL
             List<MEDICAMENT> lm = new MedicamentDAO().FindAll();
             return lm;
         }
+
         /// <summary>
         /// Permet de charger tous les motifs visite
         /// </summary>
@@ -132,6 +144,7 @@ namespace GSBCR.BLL
             List<MOTIF_VISITE> lm = new MotifVisiteDAO().FindAll();
             return lm;
         }
+
         /// <summary>
         /// Permet de charger tous les praticiens
         /// </summary>
@@ -140,6 +153,7 @@ namespace GSBCR.BLL
             List<PRATICIEN> lp = new PratricienDAO().FindAll();
             return lp;
         }
+
         /// <summary>
         /// Permet de charger un praticien à partir de son numéro
         /// <param name="pranum">entier</param>
