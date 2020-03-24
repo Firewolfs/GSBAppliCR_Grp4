@@ -156,7 +156,8 @@ namespace GSBCR.BLL
         public static PRATICIEN ChargerLePraticien(Int16 pranum)
         {
             // A faire
-            return null;
+            PRATICIEN prat = new PratricienDAO().FindById(pranum);
+            return prat;
         }
     }
 }
