@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMenuVisiteur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,8 +95,23 @@
     <Compile Include="FrmSaisir.designer.cs">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUpdateMdp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdateMdp.Designer.cs">
+      <DependentUpon>FrmUpdateMdp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUpdatePersoInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdatePersoInfo.Designer.cs">
+      <DependentUpon>FrmUpdatePersoInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMenuVisiteur.resx">
       <DependentUpon>FrmMenuVisiteur.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +120,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSaisir.resx">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdateMdp.resx">
+      <DependentUpon>FrmUpdateMdp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdatePersoInfo.resx">
+      <DependentUpon>FrmUpdatePersoInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -137,7 +164,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="images\" />
+    <None Include="images\logo_sans_fond.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GSBCR.BLL\GSBCR.BLL.csproj">
@@ -148,6 +175,9 @@
       <Project>{96cb56b1-0631-4551-8d65-65adc998c487}</Project>
       <Name>GSBCR.modele</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
