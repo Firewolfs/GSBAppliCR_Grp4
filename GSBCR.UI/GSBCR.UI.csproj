@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmConsulterRapportRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsulterRapportRegion.Designer.cs">
+      <DependentUpon>FrmConsulterRapportRegion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
