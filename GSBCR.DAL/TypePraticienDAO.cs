@@ -10,6 +10,12 @@ using System.Data.Entity.Infrastructure;
 
 namespace GSBCR.DAL {
     public class TypePraticienDAO {
+
+        /// <summary>
+        /// Retourne le type de praticien en fonction de son code 
+        /// </summary>
+        /// <param name="code">Code du Type de Praticien</param>
+        /// <returns>TYPE_PRATICIEN</returns>
         public TYPE_PRATICIEN FindById(string code) {
 
             TYPE_PRATICIEN type = null;
@@ -24,6 +30,10 @@ namespace GSBCR.DAL {
             return type;
         }
 
+        /// <summary>
+        /// Retourne tous les type de praticien
+        /// </summary>
+        /// <returns>List<TYPE_PRATICIEN></returns>
         public List<TYPE_PRATICIEN> FindAll() {
 
             List<TYPE_PRATICIEN> types = null;

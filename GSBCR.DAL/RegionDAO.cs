@@ -9,6 +9,12 @@ using System.Data.Entity.Infrastructure;
 
 namespace GSBCR.DAL {
     public class RegionDAO {
+
+        /// <summary>
+        /// Retourne une région en fonction de son code
+        /// </summary>
+        /// <param name="code">Code de la région</param>
+        /// <returns>REGION</returns>
         public REGION FindById(string code) {
 
             REGION reg = null;
@@ -23,6 +29,10 @@ namespace GSBCR.DAL {
             return reg;
         }
 
+        /// <summary>
+        /// Retourne la liste de toutes les régions
+        /// </summary>
+        /// <returns>List<REGION></returns>
         public List<REGION> FindAll() {
 
             List<REGION> regs = null;
