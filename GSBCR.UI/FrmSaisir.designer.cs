@@ -63,6 +63,7 @@
             this.bsMed1 = new System.Windows.Forms.BindingSource(this.components);
             this.bsMed2 = new System.Windows.Forms.BindingSource(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pnl_Separateur = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.nupCoef)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsPraticien)).BeginInit();
@@ -349,6 +350,14 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // pnl_Separateur
+            // 
+            this.pnl_Separateur.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_Separateur.Location = new System.Drawing.Point(36, 45);
+            this.pnl_Separateur.Name = "pnl_Separateur";
+            this.pnl_Separateur.Size = new System.Drawing.Size(580, 2);
+            this.pnl_Separateur.TabIndex = 26;
+            // 
             // FrmSaisir
             // 
             this.AcceptButton = this.btnValider;
@@ -356,6 +365,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnQuitter;
             this.ClientSize = new System.Drawing.Size(653, 586);
+            this.Controls.Add(this.pnl_Separateur);
             this.Controls.Add(this.btnVoirPatricien);
             this.Controls.Add(this.txtMatricule);
             this.Controls.Add(this.groupBox1);
@@ -430,5 +440,6 @@
         private System.Windows.Forms.Button btnVoirMed1;
         private System.Windows.Forms.Button btnVoirPatricien;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Panel pnl_Separateur;
     }
 }

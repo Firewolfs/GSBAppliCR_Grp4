@@ -95,6 +95,12 @@
     <Compile Include="FrmMenuVisiteur.designer.cs">
       <DependentUpon>FrmMenuVisiteur.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPraticiens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPraticiens.Designer.cs">
+      <DependentUpon>FrmPraticiens.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRapportEnCours.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,12 @@
     <Compile Include="FrmUpdatePersoInfo.Designer.cs">
       <DependentUpon>FrmUpdatePersoInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVisiteurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisiteurs.Designer.cs">
+      <DependentUpon>FrmVisiteurs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmLogin.resx">
@@ -132,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenuVisiteur.resx">
       <DependentUpon>FrmMenuVisiteur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPraticiens.resx">
+      <DependentUpon>FrmPraticiens.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRapportEnCours.resx">
       <DependentUpon>FrmRapportEnCours.cs</DependentUpon>
@@ -144,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdatePersoInfo.resx">
       <DependentUpon>FrmUpdatePersoInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisiteurs.resx">
+      <DependentUpon>FrmVisiteurs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -192,6 +210,10 @@
     <ProjectReference Include="..\GSBCR.modele\GSBCR.modele.csproj">
       <Project>{96cb56b1-0631-4551-8d65-65adc998c487}</Project>
       <Name>GSBCR.modele</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GSBCR.UC\GSBCR.UC.csproj">
+      <Project>{EE5DCB18-A81D-4B89-B955-E155FD80601D}</Project>
+      <Name>GSBCR.UC</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
