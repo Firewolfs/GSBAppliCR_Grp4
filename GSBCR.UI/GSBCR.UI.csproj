@@ -77,6 +77,12 @@
     <Compile Include="FrmConsulterRapportRegion.Designer.cs">
       <DependentUpon>FrmConsulterRapportRegion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsulterRapportValide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsulterRapportValide.Designer.cs">
+      <DependentUpon>FrmConsulterRapportValide.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     </Compile>
     <Compile Include="FrmSaisir.designer.cs">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSaisirRapportRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSaisirRapportRegion.Designer.cs">
+      <DependentUpon>FrmSaisirRapportRegion.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUpdateMdp.cs">
       <SubType>Form</SubType>

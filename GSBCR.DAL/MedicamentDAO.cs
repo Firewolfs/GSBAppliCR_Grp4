@@ -12,6 +12,11 @@ namespace GSBCR.DAL
 {
     public class MedicamentDAO
     {
+        /// <summary>
+        /// Permet de trouver un médicament par son nom de dépot
+        /// </summary>
+        /// <param name="depot"></param>
+        /// <returns></returns>
         public MEDICAMENT FindById(string depot)
         {
             //rechercher un médicament par son nom de dépot
@@ -29,6 +34,10 @@ namespace GSBCR.DAL
             return med;
         }
 
+        /// <summary>
+        /// Permet de charger tous les médicaments
+        /// </summary>
+        /// <returns></returns>
         public List<MEDICAMENT> FindAll()
         {
             //charger tous les médicaments
@@ -46,6 +55,11 @@ namespace GSBCR.DAL
             
         }
 
+        /// <summary>
+        /// Permet de charger tous les médicaments d'une famille
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
         public List<MEDICAMENT> FindByFamille(string code)
         {
             //A faire : charger tous les médicaments d'une famille
