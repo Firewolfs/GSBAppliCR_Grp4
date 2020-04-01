@@ -129,8 +129,10 @@
             // 
             // txtNumPraticien
             // 
+            this.txtNumPraticien.BackColor = System.Drawing.Color.White;
             this.txtNumPraticien.Location = new System.Drawing.Point(282, 117);
             this.txtNumPraticien.Name = "txtNumPraticien";
+            this.txtNumPraticien.ReadOnly = true;
             this.txtNumPraticien.Size = new System.Drawing.Size(100, 20);
             this.txtNumPraticien.TabIndex = 6;
             this.txtNumPraticien.TabStop = false;
@@ -232,8 +234,10 @@
             // 
             // txtCodeMotif
             // 
+            this.txtCodeMotif.BackColor = System.Drawing.Color.White;
             this.txtCodeMotif.Location = new System.Drawing.Point(282, 146);
             this.txtCodeMotif.Name = "txtCodeMotif";
+            this.txtCodeMotif.ReadOnly = true;
             this.txtCodeMotif.Size = new System.Drawing.Size(100, 20);
             this.txtCodeMotif.TabIndex = 18;
             this.txtCodeMotif.TabStop = false;
@@ -295,16 +299,20 @@
             // 
             // txtMed2
             // 
+            this.txtMed2.BackColor = System.Drawing.Color.White;
             this.txtMed2.Location = new System.Drawing.Point(153, 52);
             this.txtMed2.Name = "txtMed2";
+            this.txtMed2.ReadOnly = true;
             this.txtMed2.Size = new System.Drawing.Size(100, 20);
             this.txtMed2.TabIndex = 3;
             this.txtMed2.TabStop = false;
             // 
             // txtMed1
             // 
+            this.txtMed1.BackColor = System.Drawing.Color.White;
             this.txtMed1.Location = new System.Drawing.Point(153, 20);
             this.txtMed1.Name = "txtMed1";
+            this.txtMed1.ReadOnly = true;
             this.txtMed1.Size = new System.Drawing.Size(100, 20);
             this.txtMed1.TabIndex = 2;
             this.txtMed1.TabStop = false;

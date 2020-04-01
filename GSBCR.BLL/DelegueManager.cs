@@ -14,12 +14,13 @@ namespace GSBCR.BLL
         /// Permet de retourner une liste de visiteurs pour un région à partir de vaffectation
         /// </summary>
         /// <param name="regionCode">code région</param>
+        /// /// <param name="role">Rôle de l'utilisateur (délégué ou responsable)</param>
         /// <returns>List<VISITEUR></returns>
-        public static List<VISITEUR> ChargerVisiteurByRegion(string regionCode)
+        public static List<VISITEUR> ChargerVisiteurByRegion(string regionCode, string role)
         {
             List<VISITEUR> lv = new List<VISITEUR>();
             VISITEUR vis;
-            List<VAFFECTATION> lvaff = new VaffectationDAO().FindByRegion(regionCode);
+            List<VAFFECTATION> lvaff = new VaffectationDAO().FindByRegion(regionCode, role);
             foreach (VAFFECTATION vaff in lvaff)
             {
                 vis = new VisiteurDAO().FindById(vaff.VIS_MATRICULE);
@@ -33,11 +34,12 @@ namespace GSBCR.BLL
         /// Permet de charger les rapports non consultés (état 2) des visiteurs d'une région  
         /// </summary>
         /// <param name="code">code région</param>
+        /// <param name="role">Rôle de l'utilisateur (délégué ou responsable)</param>
         /// <returns>List<RAPPORT_VISITE>/returns>
-        public static List<RAPPORT_VISITE> ChargerRapportRegionNonLus(String code)
+        public static List<RAPPORT_VISITE> ChargerRapportRegionNonLus(String code, string role)
         {
             List<String> visMat = new List<string>();
-            List<VAFFECTATION> lvaff = new VaffectationDAO().FindByRegion(code);
+            List<VAFFECTATION> lvaff = new VaffectationDAO().FindByRegion(code, role);
             List<RAPPORT_VISITE> lesRaps = new List<RAPPORT_VISITE>();
 
             foreach (VAFFECTATION laAffectation in lvaff)
@@ -56,11 +58,12 @@ namespace GSBCR.BLL
         /// Permet de charger les rapports terminés et consultés (état 3) des visiteurs d'une région 
         /// </summary>
         /// <param name="r">code région</param>
+        /// <param name="role">Rôle de l'utilisateur (délégué ou responsable)</param>
         /// <returns>List<RAPPORT_VISITE>/returns>
-        public static List<RAPPORT_VISITE> ChargerRapportRegionLus(String r)
+        public static List<RAPPORT_VISITE> ChargerRapportRegionLus(String r, string role)
         {
             List<String> visMat = new List<string>();
-            List<VAFFECTATION> lvaff = new VaffectationDAO().FindByRegion(r);
+            List<VAFFECTATION> lvaff = new VaffectationDAO().FindByRegion(r, role);
             List<RAPPORT_VISITE> lesRaps = new List<RAPPORT_VISITE>();
 
             foreach (VAFFECTATION laAffectation in lvaff)

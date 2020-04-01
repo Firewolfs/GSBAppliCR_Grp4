@@ -233,7 +233,19 @@ namespace GSBCR.UI
 
         private void btnVoirPatricien_Click(object sender, EventArgs e)
         {
-            //to do
+
+            FrmPraticiens consultPrati;
+
+            if (txtNumPraticien.Text != "")
+            {
+
+                consultPrati = new FrmPraticiens(Convert.ToInt32(txtNumPraticien.Text));
+                consultPrati.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Aucun praticien sélectionné", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void cbxNomPraticien_Validating(object sender, CancelEventArgs e)

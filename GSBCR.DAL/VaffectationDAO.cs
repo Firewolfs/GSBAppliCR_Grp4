@@ -29,22 +29,38 @@ namespace GSBCR.DAL
             }
             return v;
         }
+
         /// <summary>
         /// Permet de retourner une liste d'affectations pour un région en utilisant la vue VAFFECTATION
         /// </summary>
         /// <param name="regionCode">code région</param>
+        /// <param name="role">Rôle de l'utilisateur (délégué ou responsable)</param>
         /// <returns>List<VAFFECTATION></returns>
-        public List<VAFFECTATION> FindByRegion(string regionCode)
+        public List<VAFFECTATION> FindByRegion(string regionCode, string role)
         {
             List<VAFFECTATION> lv = null;
             using (var context = new GSB_visite_LEGUILLIEREntities())
             {
                 //désactiver le chargement différé
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from vaff in context.VAFFECTATION
-                          where vaff.REG_CODE == regionCode && vaff.TRA_ROLE == "Visiteur"
-                          select vaff;
-                lv = req.ToList();
+                if (role == "Responsable")
+                {
+                    var req = from vaff in context.VAFFECTATION
+                              where vaff.REG_CODE == regionCode && vaff.TRA_ROLE == "Visiteur"
+                              select vaff;
+
+                    lv = req.ToList();
+                }
+                else if (role == "Délégué")
+                {
+                    var req = from vaff in context.VAFFECTATION
+                              where vaff.REG_CODE == regionCode && vaff.TRA_ROLE == "Visiteur" || vaff.TRA_ROLE == "Délégué"
+                              select vaff;
+
+                    lv = req.ToList();
+                }
+
+                
             }
             return lv;
         }

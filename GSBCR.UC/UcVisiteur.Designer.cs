@@ -56,6 +56,9 @@
             this.lbl_Nom = new System.Windows.Forms.Label();
             this.txt_Matricule = new System.Windows.Forms.TextBox();
             this.lbl_Matricule = new System.Windows.Forms.Label();
+            this.lbl_NbRapportsConsultes = new System.Windows.Forms.Label();
+            this.txt_NbRapportsConsultes = new System.Windows.Forms.TextBox();
+            this.btn_ConsulterRapports = new System.Windows.Forms.Button();
             this.pnl_Region.SuspendLayout();
             this.pnl_Secteur.SuspendLayout();
             this.pnl_Ville.SuspendLayout();
@@ -311,10 +314,40 @@
             this.lbl_Matricule.TabIndex = 22;
             this.lbl_Matricule.Text = "Matricule";
             // 
+            // lbl_NbRapportsConsultes
+            // 
+            this.lbl_NbRapportsConsultes.AutoSize = true;
+            this.lbl_NbRapportsConsultes.Location = new System.Drawing.Point(30, 621);
+            this.lbl_NbRapportsConsultes.Name = "lbl_NbRapportsConsultes";
+            this.lbl_NbRapportsConsultes.Size = new System.Drawing.Size(98, 13);
+            this.lbl_NbRapportsConsultes.TabIndex = 44;
+            this.lbl_NbRapportsConsultes.Text = "Rapports consultés";
+            // 
+            // txt_NbRapportsConsultes
+            // 
+            this.txt_NbRapportsConsultes.BackColor = System.Drawing.Color.White;
+            this.txt_NbRapportsConsultes.Location = new System.Drawing.Point(149, 617);
+            this.txt_NbRapportsConsultes.Name = "txt_NbRapportsConsultes";
+            this.txt_NbRapportsConsultes.ReadOnly = true;
+            this.txt_NbRapportsConsultes.Size = new System.Drawing.Size(70, 20);
+            this.txt_NbRapportsConsultes.TabIndex = 45;
+            // 
+            // btn_ConsulterRapports
+            // 
+            this.btn_ConsulterRapports.Location = new System.Drawing.Point(225, 616);
+            this.btn_ConsulterRapports.Name = "btn_ConsulterRapports";
+            this.btn_ConsulterRapports.Size = new System.Drawing.Size(75, 23);
+            this.btn_ConsulterRapports.TabIndex = 46;
+            this.btn_ConsulterRapports.Text = "Consulter";
+            this.btn_ConsulterRapports.UseVisualStyleBackColor = true;
+            // 
             // UcVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_ConsulterRapports);
+            this.Controls.Add(this.txt_NbRapportsConsultes);
+            this.Controls.Add(this.lbl_NbRapportsConsultes);
             this.Controls.Add(this.txt_Telephone);
             this.Controls.Add(this.lbl_Telephone);
             this.Controls.Add(this.txt_Email);
@@ -338,7 +371,7 @@
             this.Controls.Add(this.txt_Matricule);
             this.Controls.Add(this.lbl_Matricule);
             this.Name = "UcVisiteur";
-            this.Size = new System.Drawing.Size(420, 629);
+            this.Size = new System.Drawing.Size(420, 663);
             this.pnl_Region.ResumeLayout(false);
             this.pnl_Region.PerformLayout();
             this.pnl_Secteur.ResumeLayout(false);
@@ -380,5 +413,8 @@
         private System.Windows.Forms.Label lbl_Nom;
         private System.Windows.Forms.TextBox txt_Matricule;
         private System.Windows.Forms.Label lbl_Matricule;
+        private System.Windows.Forms.Label lbl_NbRapportsConsultes;
+        private System.Windows.Forms.TextBox txt_NbRapportsConsultes;
+        private System.Windows.Forms.Button btn_ConsulterRapports;
     }
 }

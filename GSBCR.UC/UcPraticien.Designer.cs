@@ -46,6 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_ConsulterRapports = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,18 +62,22 @@
             // 
             // txtCp
             // 
+            this.txtCp.BackColor = System.Drawing.Color.White;
             this.txtCp.CausesValidation = false;
             this.txtCp.Location = new System.Drawing.Point(0, 2);
             this.txtCp.Name = "txtCp";
+            this.txtCp.ReadOnly = true;
             this.txtCp.Size = new System.Drawing.Size(70, 20);
             this.txtCp.TabIndex = 9;
             this.txtCp.TabStop = false;
             // 
             // txtVille
             // 
+            this.txtVille.BackColor = System.Drawing.Color.White;
             this.txtVille.CausesValidation = false;
             this.txtVille.Location = new System.Drawing.Point(76, 2);
             this.txtVille.Name = "txtVille";
+            this.txtVille.ReadOnly = true;
             this.txtVille.Size = new System.Drawing.Size(154, 20);
             this.txtVille.TabIndex = 11;
             this.txtVille.TabStop = false;
@@ -88,18 +93,22 @@
             // 
             // txtLibelType
             // 
+            this.txtLibelType.BackColor = System.Drawing.Color.White;
             this.txtLibelType.CausesValidation = false;
             this.txtLibelType.Location = new System.Drawing.Point(76, 2);
             this.txtLibelType.Name = "txtLibelType";
+            this.txtLibelType.ReadOnly = true;
             this.txtLibelType.Size = new System.Drawing.Size(154, 20);
             this.txtLibelType.TabIndex = 1;
             this.txtLibelType.TabStop = false;
             // 
             // txtCodeType
             // 
+            this.txtCodeType.BackColor = System.Drawing.Color.White;
             this.txtCodeType.CausesValidation = false;
             this.txtCodeType.Location = new System.Drawing.Point(0, 2);
             this.txtCodeType.Name = "txtCodeType";
+            this.txtCodeType.ReadOnly = true;
             this.txtCodeType.Size = new System.Drawing.Size(70, 20);
             this.txtCodeType.TabIndex = 0;
             this.txtCodeType.TabStop = false;
@@ -115,9 +124,11 @@
             // 
             // txtCoefNoto
             // 
+            this.txtCoefNoto.BackColor = System.Drawing.Color.White;
             this.txtCoefNoto.CausesValidation = false;
             this.txtCoefNoto.Location = new System.Drawing.Point(154, 281);
             this.txtCoefNoto.Name = "txtCoefNoto";
+            this.txtCoefNoto.ReadOnly = true;
             this.txtCoefNoto.Size = new System.Drawing.Size(70, 20);
             this.txtCoefNoto.TabIndex = 27;
             this.txtCoefNoto.TabStop = false;
@@ -142,9 +153,11 @@
             // 
             // txtAddr
             // 
+            this.txtAddr.BackColor = System.Drawing.Color.White;
             this.txtAddr.CausesValidation = false;
             this.txtAddr.Location = new System.Drawing.Point(154, 179);
             this.txtAddr.Name = "txtAddr";
+            this.txtAddr.ReadOnly = true;
             this.txtAddr.Size = new System.Drawing.Size(230, 20);
             this.txtAddr.TabIndex = 24;
             this.txtAddr.TabStop = false;
@@ -160,9 +173,11 @@
             // 
             // txtFirstName
             // 
+            this.txtFirstName.BackColor = System.Drawing.Color.White;
             this.txtFirstName.CausesValidation = false;
             this.txtFirstName.Location = new System.Drawing.Point(154, 128);
             this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(120, 20);
             this.txtFirstName.TabIndex = 22;
             this.txtFirstName.TabStop = false;
@@ -178,9 +193,11 @@
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.CausesValidation = false;
             this.txtName.Location = new System.Drawing.Point(154, 77);
             this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(120, 20);
             this.txtName.TabIndex = 20;
             this.txtName.TabStop = false;
@@ -196,9 +213,11 @@
             // 
             // txtNum
             // 
+            this.txtNum.BackColor = System.Drawing.Color.White;
             this.txtNum.CausesValidation = false;
             this.txtNum.Location = new System.Drawing.Point(154, 26);
             this.txtNum.Name = "txtNum";
+            this.txtNum.ReadOnly = true;
             this.txtNum.Size = new System.Drawing.Size(70, 20);
             this.txtNum.TabIndex = 18;
             this.txtNum.TabStop = false;
@@ -212,10 +231,20 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Numéro";
             // 
+            // btn_ConsulterRapports
+            // 
+            this.btn_ConsulterRapports.Location = new System.Drawing.Point(266, 26);
+            this.btn_ConsulterRapports.Name = "btn_ConsulterRapports";
+            this.btn_ConsulterRapports.Size = new System.Drawing.Size(118, 23);
+            this.btn_ConsulterRapports.TabIndex = 31;
+            this.btn_ConsulterRapports.Text = "Consulter les rapports";
+            this.btn_ConsulterRapports.UseVisualStyleBackColor = true;
+            // 
             // UcPraticien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_ConsulterRapports);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label8);
@@ -261,5 +290,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNum;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_ConsulterRapports;
     }
 }

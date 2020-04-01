@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnl_Separateur = new System.Windows.Forms.Panel();
             this.lblTitre = new System.Windows.Forms.Label();
-            this.cbx_Praticien = new System.Windows.Forms.ComboBox();
+            this.cbx_Praticiens = new System.Windows.Forms.ComboBox();
             this.lbl_Praticien = new System.Windows.Forms.Label();
             this.ucPraticien1 = new GSBCR.UC.UcPraticien();
+            this.bsPraticiens = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bsPraticiens)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Separateur
@@ -54,13 +57,14 @@
             this.lblTitre.TabIndex = 28;
             this.lblTitre.Text = "Les praticiens";
             // 
-            // cbx_Praticien
+            // cbx_Praticiens
             // 
-            this.cbx_Praticien.FormattingEnabled = true;
-            this.cbx_Praticien.Location = new System.Drawing.Point(169, 77);
-            this.cbx_Praticien.Name = "cbx_Praticien";
-            this.cbx_Praticien.Size = new System.Drawing.Size(230, 21);
-            this.cbx_Praticien.TabIndex = 31;
+            this.cbx_Praticiens.FormattingEnabled = true;
+            this.cbx_Praticiens.Location = new System.Drawing.Point(168, 76);
+            this.cbx_Praticiens.Name = "cbx_Praticiens";
+            this.cbx_Praticiens.Size = new System.Drawing.Size(230, 21);
+            this.cbx_Praticiens.TabIndex = 31;
+            this.cbx_Praticiens.SelectedIndexChanged += new System.EventHandler(this.cbx_Praticiens_SelectedIndexChanged);
             // 
             // lbl_Praticien
             // 
@@ -85,12 +89,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 492);
             this.Controls.Add(this.ucPraticien1);
-            this.Controls.Add(this.cbx_Praticien);
+            this.Controls.Add(this.cbx_Praticiens);
             this.Controls.Add(this.lbl_Praticien);
             this.Controls.Add(this.pnl_Separateur);
             this.Controls.Add(this.lblTitre);
             this.Name = "FrmPraticiens";
             this.Text = "Praticiens";
+            this.Load += new System.EventHandler(this.FrmPraticiens_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bsPraticiens)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,8 +106,9 @@
 
         private System.Windows.Forms.Panel pnl_Separateur;
         private System.Windows.Forms.Label lblTitre;
-        private System.Windows.Forms.ComboBox cbx_Praticien;
+        private System.Windows.Forms.ComboBox cbx_Praticiens;
         private System.Windows.Forms.Label lbl_Praticien;
         private UC.UcPraticien ucPraticien1;
+        private System.Windows.Forms.BindingSource bsPraticiens;
     }
 }

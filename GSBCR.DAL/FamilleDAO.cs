@@ -11,6 +11,11 @@ namespace GSBCR.DAL
 {
     public class FamilleDAO
     {
+        /// <summary>
+        /// Retourne une famille de médicament spécifié
+        /// </summary>
+        /// <param name="code">Code de la famille de médicament</param>
+        /// <returns>La famille de médicament spécifié</returns>
         public FAMILLE FindById(string code)
         {
             //A faire : rechercher une famille de médicaments par son nom
@@ -25,6 +30,10 @@ namespace GSBCR.DAL
             return med;
         }
 
+        /// <summary>
+        /// Retourne toute les familles de médicaments
+        /// </summary>
+        /// <returns>Liste des familles de médicaments</returns>
         public List<FAMILLE> FindAll()
         {
             //A faire : charger toutes les familles de médicaments
