@@ -111,7 +111,7 @@
             this.monSecteurToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(982, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(982, 33);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -153,6 +153,7 @@
             this.mesRapportsValidésToolStripMenuItem.Name = "mesRapportsValidésToolStripMenuItem";
             this.mesRapportsValidésToolStripMenuItem.Size = new System.Drawing.Size(279, 34);
             this.mesRapportsValidésToolStripMenuItem.Text = "Mes rapports validés";
+            this.mesRapportsValidésToolStripMenuItem.Click += new System.EventHandler(this.mesRapportsValidésToolStripMenuItem_Click);
             // 
             // lesMedicamentsToolStripMenuItem
             // 

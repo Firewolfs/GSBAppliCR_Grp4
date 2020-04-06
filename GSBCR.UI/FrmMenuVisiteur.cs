@@ -101,5 +101,28 @@ namespace GSBCR.UI
             FrmConsulterMedicament Medoc = new FrmConsulterMedicament();
             Medoc.ShowDialog();
         }
+
+        private void mesRapportsValidésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<RAPPORT_VISITE> lesRapports = null;
+            try
+            {
+                lesRapports = VisiteurManager.ChargerRapportVisiteurFinis(leVisiteur.VIS_MATRICULE);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            if (lesRapports != null && lesRapports.Count != 0)
+            {
+                FrmConsulterRapportValide f = new FrmConsulterRapportValide(leVisiteur, lesRapports);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Aucun rapport de visite n'a été validé", "Gestion Rapports de visite", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+    
     }
 }
