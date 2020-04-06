@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GSBCR.BLL;
+using GSBCR.modele;
 
 namespace GSBCR.UI
 {
@@ -15,6 +17,25 @@ namespace GSBCR.UI
         public FrmLogin()
         {
             InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e) {
+            String login = txtLogin.Text;
+            String password = txtMdp.Text;
+
+            VISITEUR v = VisiteurManager.ChargerVisiteur(login, password);
+            if (v != null) {
+                this.Hide();
+                FrmMenuVisiteur FrmMenuVisiteur = new FrmMenuVisiteur(login, password);
+                FrmMenuVisiteur.ShowDialog();
+                this.Close();
+            } else {
+                txtLogin.Text = "";
+                txtMdp.Text = "";
+
+                label3.Text = "Erreur : login ou mot de passe incorrecte !";
+                label3.Visible = true;
+            }
         }
     }
 }

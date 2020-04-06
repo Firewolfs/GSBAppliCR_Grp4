@@ -34,6 +34,7 @@
             this.txtMdp = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +69,7 @@
             // 
             this.txtMdp.Location = new System.Drawing.Point(494, 294);
             this.txtMdp.Name = "txtMdp";
+            this.txtMdp.PasswordChar = '*';
             this.txtMdp.Size = new System.Drawing.Size(185, 20);
             this.txtMdp.TabIndex = 4;
             // 
@@ -89,12 +91,26 @@
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Connexion";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(383, 77);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "label3";
+            this.label3.Visible = false;
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 442);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtMdp);
             this.Controls.Add(this.label2);
@@ -117,5 +133,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMdp;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Label label3;
     }
 }
