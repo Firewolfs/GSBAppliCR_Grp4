@@ -64,7 +64,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(406, 461);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(87, 30);
+            this.button3.Size = new System.Drawing.Size(87, 43);
             this.button3.TabIndex = 18;
             this.button3.Text = "Quitter";
             this.button3.UseVisualStyleBackColor = true;
@@ -145,6 +145,7 @@
             this.dgvRapportValide.RowTemplate.Height = 28;
             this.dgvRapportValide.Size = new System.Drawing.Size(906, 288);
             this.dgvRapportValide.TabIndex = 27;
+            this.dgvRapportValide.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRapportValide_CellDoubleClick);
             // 
             // rAPMATRICULEDataGridViewTextBoxColumn
             // 
