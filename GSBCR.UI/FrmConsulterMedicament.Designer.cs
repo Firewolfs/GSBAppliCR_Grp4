@@ -42,7 +42,7 @@
             this.cbxMedicament.FormattingEnabled = true;
             this.cbxMedicament.Location = new System.Drawing.Point(341, 12);
             this.cbxMedicament.Name = "cbxMedicament";
-            this.cbxMedicament.Size = new System.Drawing.Size(197, 28);
+            this.cbxMedicament.Size = new System.Drawing.Size(197, 21);
             this.cbxMedicament.TabIndex = 1;
             this.cbxMedicament.SelectedIndexChanged += new System.EventHandler(this.cbxMedicament_SelectedIndexChanged);
             // 
@@ -68,7 +68,6 @@
             // 
             // ucMedicament1
             // 
-            this.ucMedicament1.LeMedicament = null;
             this.ucMedicament1.Location = new System.Drawing.Point(13, 64);
             this.ucMedicament1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ucMedicament1.Medic = null;

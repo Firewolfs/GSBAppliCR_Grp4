@@ -24,8 +24,6 @@ namespace GSBCR.UC {
             }
         }
 
-        public object LeMedicament { get; set; }
-
         public UcMedicament() {
             InitializeComponent();
         }
