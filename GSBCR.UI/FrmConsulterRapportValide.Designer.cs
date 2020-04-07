@@ -124,7 +124,7 @@
             this.dgvRapportValide.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRapportValide.Size = new System.Drawing.Size(906, 288);
             this.dgvRapportValide.TabIndex = 27;
-            this.dgvRapportValide.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRapportValide_CellDoubleClick);
+            this.dgvRapportValide.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRapportValide_CellDoubleClick);
             // 
             // rAPNUMDataGridViewTextBoxColumn
             // 
