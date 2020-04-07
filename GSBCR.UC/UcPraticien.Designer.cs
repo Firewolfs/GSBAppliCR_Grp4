@@ -233,7 +233,7 @@
             // 
             // btn_ConsulterRapports
             // 
-            this.btn_ConsulterRapports.Location = new System.Drawing.Point(266, 26);
+            this.btn_ConsulterRapports.Location = new System.Drawing.Point(266, 25);
             this.btn_ConsulterRapports.Name = "btn_ConsulterRapports";
             this.btn_ConsulterRapports.Size = new System.Drawing.Size(118, 23);
             this.btn_ConsulterRapports.TabIndex = 31;

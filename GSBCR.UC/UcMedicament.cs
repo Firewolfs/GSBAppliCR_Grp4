@@ -35,12 +35,12 @@ namespace GSBCR.UC {
         }
 
         private void ucMedicamentRefresh() {
-            txtDpLeg.Text = medic.MED_DEPOTLEGAL;
-            txtComName.Text = medic.MED_NOMCOMMERCIAL;
+            txtDepot.Text = medic.MED_DEPOTLEGAL;
+            txtNomCom.Text = medic.MED_NOMCOMMERCIAL;
             txtCodeFam.Text = medic.FAM_CODE;
             txtLibelFam.Text = medic.LaFamille.FAM_LIBELLE;
             txtCompo.Text = medic.MED_COMPOSITION;
-            txtContrIndic.Text = medic.MED_CONTREINDIC;
+            txtContreIndic.Text = medic.MED_CONTREINDIC;
             txtEffect.Text = medic.MED_EFFETS;
             txtPrix.Text = medic.MED_PRIXECHANTILLON.ToString();
         }
