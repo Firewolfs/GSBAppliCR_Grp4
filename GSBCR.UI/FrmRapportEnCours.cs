@@ -57,5 +57,10 @@ namespace GSBCR.UI
                 bsRapportEnCours.Add(r);
             }
         }
+
+        private void dgvRapportEnCours_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

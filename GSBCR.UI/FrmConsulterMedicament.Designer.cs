@@ -29,61 +29,61 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ucMedicament1 = new GSBCR.UC.UcMedicament();
             this.cbxMedicament = new System.Windows.Forms.ComboBox();
             this.bsMedicament = new System.Windows.Forms.BindingSource(this.components);
-            this.btn_voirRapport = new System.Windows.Forms.Button();
+            this.btnVoirRapport = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.ucMedicament1 = new GSBCR.UC.UcMedicament();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedicament)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ucMedicament1
-            // 
-            this.ucMedicament1.LeMedicament = null;
-            this.ucMedicament1.Location = new System.Drawing.Point(66, 37);
-            this.ucMedicament1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucMedicament1.Medic = null;
-            this.ucMedicament1.Name = "ucMedicament1";
-            this.ucMedicament1.Size = new System.Drawing.Size(664, 645);
-            this.ucMedicament1.TabIndex = 0;
             // 
             // cbxMedicament
             // 
             this.cbxMedicament.FormattingEnabled = true;
-            this.cbxMedicament.Location = new System.Drawing.Point(303, 10);
+            this.cbxMedicament.Location = new System.Drawing.Point(341, 12);
             this.cbxMedicament.Name = "cbxMedicament";
             this.cbxMedicament.Size = new System.Drawing.Size(197, 28);
             this.cbxMedicament.TabIndex = 1;
             this.cbxMedicament.SelectedIndexChanged += new System.EventHandler(this.cbxMedicament_SelectedIndexChanged);
             // 
-            // btn_voirRapport
+            // btnVoirRapport
             // 
-            this.btn_voirRapport.Location = new System.Drawing.Point(628, 64);
-            this.btn_voirRapport.Name = "btn_voirRapport";
-            this.btn_voirRapport.Size = new System.Drawing.Size(144, 65);
-            this.btn_voirRapport.TabIndex = 5;
-            this.btn_voirRapport.Text = "Voir les rapports de visite";
-            this.btn_voirRapport.UseVisualStyleBackColor = true;
-            this.btn_voirRapport.Visible = false;
-            //this.btn_voirRapport.Click += new System.EventHandler(this.btn_voirRapport_Click);
+            this.btnVoirRapport.Location = new System.Drawing.Point(574, 8);
+            this.btnVoirRapport.Name = "btnVoirRapport";
+            this.btnVoirRapport.Size = new System.Drawing.Size(233, 35);
+            this.btnVoirRapport.TabIndex = 5;
+            this.btnVoirRapport.Text = "Voir les rapports de visite";
+            this.btnVoirRapport.UseVisualStyleBackColor = true;
+            this.btnVoirRapport.Visible = false;
+            this.btnVoirRapport.Click += new System.EventHandler(this.btn_voirRapport_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(658, 596);
+            this.button1.Location = new System.Drawing.Point(485, 436);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 59);
+            this.button1.Size = new System.Drawing.Size(114, 35);
             this.button1.TabIndex = 6;
             this.button1.Text = "Quitter";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // ucMedicament1
+            // 
+            this.ucMedicament1.LeMedicament = null;
+            this.ucMedicament1.Location = new System.Drawing.Point(13, 64);
+            this.ucMedicament1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ucMedicament1.Medic = null;
+            this.ucMedicament1.Name = "ucMedicament1";
+            this.ucMedicament1.Size = new System.Drawing.Size(1046, 340);
+            this.ucMedicament1.TabIndex = 7;
+            // 
             // FrmConsulterMedicament
             // 
-            this.ClientSize = new System.Drawing.Size(796, 667);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_voirRapport);
-            this.Controls.Add(this.cbxMedicament);
+            this.ClientSize = new System.Drawing.Size(1073, 505);
             this.Controls.Add(this.ucMedicament1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnVoirRapport);
+            this.Controls.Add(this.cbxMedicament);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmConsulterMedicament";
             this.Text = "Consulter un medicament";
@@ -94,11 +94,10 @@
         }
 
         #endregion
-
-        private UC.UcMedicament ucMedicament1;
         private System.Windows.Forms.ComboBox cbxMedicament;
         private System.Windows.Forms.BindingSource bsMedicament;
-        private System.Windows.Forms.Button btn_voirRapport;
+        private System.Windows.Forms.Button btnVoirRapport;
         private System.Windows.Forms.Button button1;
+        private UC.UcMedicament ucMedicament1;
     }
 }

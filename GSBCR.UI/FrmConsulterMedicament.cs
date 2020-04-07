@@ -14,14 +14,16 @@ namespace GSBCR.UI
 {
     public partial class FrmConsulterMedicament : Form
     {
-        
+
         public FrmConsulterMedicament() // voir frm praticien
         {
             InitializeComponent();
-            bsMedicament.DataSource = VisiteurManager.ChargerMedicaments();
-            cbxMedicament.DataSource = bsMedicament;
+            List<MEDICAMENT> listMed = VisiteurManager.ChargerMedicaments();
+            cbxMedicament.DataSource = listMed;
+            cbxMedicament.DataSource = listMed;
             cbxMedicament.DisplayMember = "MED_NOMCOMMERCIAL";
-            btn_voirRapport.Hide();
+            cbxMedicament.ValueMember = "MED_DEPOTLEGAL";
+            cbxMedicament.SelectedIndex = -1;
         }
 
         private void cbxMedicament_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,6 +64,13 @@ namespace GSBCR.UI
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_voirRapport_Click(object sender, EventArgs e)
+        {
+            
+            //FrmSaisir f = new FrmSaisir();
+            //f.ShowDialog();
         }
     }
 }
