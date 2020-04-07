@@ -20,7 +20,6 @@ namespace GSBCR.UI
             InitializeComponent();
             List<MEDICAMENT> listMed = VisiteurManager.ChargerMedicaments();
             cbxMedicament.DataSource = listMed;
-            cbxMedicament.DataSource = listMed;
             cbxMedicament.DisplayMember = "MED_NOMCOMMERCIAL";
             cbxMedicament.ValueMember = "MED_DEPOTLEGAL";
             cbxMedicament.SelectedIndex = -1;
@@ -31,19 +30,8 @@ namespace GSBCR.UI
             if (cbxMedicament.SelectedIndex != -1)
             {
                 MEDICAMENT m = (MEDICAMENT)cbxMedicament.SelectedItem;
-                ucMedicament1.LeMedicament = m;
+                ucMedicament1.Medic = m;
                 ucMedicament1.Visible = true;
-                //string idMedicament = m.MED_DEPOTLEGAL;
-                //List<RAPPORT_VISITE> a;
-                //a = VisiteurManager.ChargerSiRapportsExistentMedicaments(UserId , idMedicament);
-                //if (a.Count != 0)
-                //{
-                //    btn_voirRapport.Show();
-                //}
-                //else
-                //{
-                //    btn_voirRapport.Hide();
-                //}
             }
             
         }
