@@ -30,6 +30,8 @@ namespace GSBCR.modele
         public string SEC_CODE { get; set; }
         public string LAB_CODE { get; set; }
         public string vis_mdp { get; set; }
+        public string tel { get; set; }
+        public string mail { get; set; }
     
         public virtual ICollection<RAPPORT_VISITE> LesRapports { get; set; }
         public virtual SECTEUR LeSecteur { get; set; }
