@@ -31,7 +31,7 @@ namespace GSBCR.UI
             FrmSaisir f = new FrmSaisir(r, true);
             f.ShowDialog();
             //On relance la liaison de données pour actualiser l'état des rapports
-            if (r.RAP_ETAT == "1")
+            if (r.RAP_ETAT == "2" || r.RAP_ETAT=="3")
             {
                 //les rapports à l'état 1 ('rapport en cours') ne doivent pas apparaitre dans la liste
                 bsRapportValide.RemoveCurrent();
