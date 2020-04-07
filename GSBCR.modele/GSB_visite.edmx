@@ -139,6 +139,8 @@
           <Property Name="VIS_DATEEMBAUCHE" Type="datetime" Nullable="false" />
           <Property Name="SEC_CODE" Type="nvarchar" MaxLength="1" />
           <Property Name="LAB_CODE" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="tel" Type="varchar" MaxLength="15" />
+          <Property Name="mail" Type="varchar" MaxLength="255" />
           <Property Name="vis_mdp" Type="char" MaxLength="8" Nullable="false" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
@@ -618,6 +620,8 @@ FROM [dbo].[VAFFECTATION] AS [VAFFECTATION]</DefiningQuery>
           <NavigationProperty Name="LesRapports" Relationship="Self.RAPPORT_VISITE_FK01" FromRole="VISITEUR" ToRole="RAPPORT_VISITE" />
           <NavigationProperty Name="LeSecteur" Relationship="Self.VISITEUR_FK01" FromRole="VISITEUR" ToRole="SECTEUR" />
           <NavigationProperty Name="LesAffectations" Relationship="Self.TRAVAILLER_FK01" FromRole="VISITEUR" ToRole="TRAVAILLER" />
+          <Property Name="tel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="mail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="VAFFECTATION">
           <Key>
@@ -1088,6 +1092,8 @@ FROM [dbo].[VAFFECTATION] AS [VAFFECTATION]</DefiningQuery>
           <EntitySetMapping Name="VISITEUR">
             <EntityTypeMapping TypeName="GSBCR.modele.VISITEUR">
               <MappingFragment StoreEntitySet="VISITEUR">
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
                 <ScalarProperty Name="VIS_MATRICULE" ColumnName="VIS_MATRICULE" />
                 <ScalarProperty Name="VIS_NOM" ColumnName="VIS_NOM" />
                 <ScalarProperty Name="Vis_PRENOM" ColumnName="Vis_PRENOM" />

@@ -97,6 +97,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mesRapportsEnCoursToolStripMenuItem,
             this.consultationToolStripMenuItem,
@@ -105,6 +106,7 @@
             this.monSecteurToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
             this.menuStrip1.Size = new System.Drawing.Size(655, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
@@ -115,7 +117,7 @@
             this.nouveauToolStripMenuItem,
             this.modifierToolStripMenuItem});
             this.mesRapportsEnCoursToolStripMenuItem.Name = "mesRapportsEnCoursToolStripMenuItem";
-            this.mesRapportsEnCoursToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
+            this.mesRapportsEnCoursToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.mesRapportsEnCoursToolStripMenuItem.Text = "Mes rapports en cours";
             // 
             // nouveauToolStripMenuItem
@@ -139,7 +141,7 @@
             this.lesMedicamentsToolStripMenuItem,
             this.lesPraticiensToolStripMenuItem});
             this.consultationToolStripMenuItem.Name = "consultationToolStripMenuItem";
-            this.consultationToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.consultationToolStripMenuItem.Size = new System.Drawing.Size(87, 22);
             this.consultationToolStripMenuItem.Text = "Consultation";
             // 
             // mesRapportsValidésToolStripMenuItem
@@ -147,12 +149,14 @@
             this.mesRapportsValidésToolStripMenuItem.Name = "mesRapportsValidésToolStripMenuItem";
             this.mesRapportsValidésToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.mesRapportsValidésToolStripMenuItem.Text = "Mes rapports validés";
+            this.mesRapportsValidésToolStripMenuItem.Click += new System.EventHandler(this.mesRapportsValidésToolStripMenuItem_Click);
             // 
             // lesMedicamentsToolStripMenuItem
             // 
             this.lesMedicamentsToolStripMenuItem.Name = "lesMedicamentsToolStripMenuItem";
             this.lesMedicamentsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.lesMedicamentsToolStripMenuItem.Text = "Les medicaments";
+            this.lesMedicamentsToolStripMenuItem.Click += new System.EventHandler(this.lesMedicamentsToolStripMenuItem_Click);
             // 
             // lesPraticiensToolStripMenuItem
             // 
@@ -167,7 +171,7 @@
             this.modifierConsulterToolStripMenuItem,
             this.changerMonMotDePasseToolStripMenuItem});
             this.mesDonnéesPersonnellesToolStripMenuItem.Name = "mesDonnéesPersonnellesToolStripMenuItem";
-            this.mesDonnéesPersonnellesToolStripMenuItem.Size = new System.Drawing.Size(158, 20);
+            this.mesDonnéesPersonnellesToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.mesDonnéesPersonnellesToolStripMenuItem.Text = "Mes données personnelles";
             // 
             // modifierConsulterToolStripMenuItem
@@ -175,12 +179,14 @@
             this.modifierConsulterToolStripMenuItem.Name = "modifierConsulterToolStripMenuItem";
             this.modifierConsulterToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.modifierConsulterToolStripMenuItem.Text = "Modifier / Consulter";
+            this.modifierConsulterToolStripMenuItem.Click += new System.EventHandler(this.modifierConsulterToolStripMenuItem_Click);
             // 
             // changerMonMotDePasseToolStripMenuItem
             // 
             this.changerMonMotDePasseToolStripMenuItem.Name = "changerMonMotDePasseToolStripMenuItem";
             this.changerMonMotDePasseToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.changerMonMotDePasseToolStripMenuItem.Text = "Changer mon mot de passe";
+            this.changerMonMotDePasseToolStripMenuItem.Click += new System.EventHandler(this.changerMonMotDePasseToolStripMenuItem_Click);
             // 
             // maRégionToolStripMenuItem
             // 
@@ -188,7 +194,7 @@
             this.rapportsNonConsultésToolStripMenuItem,
             this.listeDesVisiteursToolStripMenuItem});
             this.maRégionToolStripMenuItem.Name = "maRégionToolStripMenuItem";
-            this.maRégionToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.maRégionToolStripMenuItem.Size = new System.Drawing.Size(73, 22);
             this.maRégionToolStripMenuItem.Text = "Ma région";
             // 
             // rapportsNonConsultésToolStripMenuItem
@@ -212,7 +218,7 @@
             this.nouveauVisiteurDéléguéToolStripMenuItem});
             this.monSecteurToolStripMenuItem.Enabled = false;
             this.monSecteurToolStripMenuItem.Name = "monSecteurToolStripMenuItem";
-            this.monSecteurToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.monSecteurToolStripMenuItem.Size = new System.Drawing.Size(85, 22);
             this.monSecteurToolStripMenuItem.Text = "Mon secteur";
             // 
             // gestionÉquipeToolStripMenuItem

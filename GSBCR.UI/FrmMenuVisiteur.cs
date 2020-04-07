@@ -15,7 +15,8 @@ namespace GSBCR.UI
     {
         private VISITEUR leVisiteur;
         private VAFFECTATION leProfil;
-        public FrmMenuVisiteur()
+
+        public FrmMenuVisiteur(String login, String password)
         {
             InitializeComponent();
             // chargement du visiteur connecté et de son profil
@@ -24,7 +25,7 @@ namespace GSBCR.UI
                 //le visiteur doit être passé en paramètre par le menu de connexion
                 //Ici initialiser le visiteur en dur
                 //visiteur
-                leVisiteur = VisiteurManager.ChargerVisiteur("a131", "30BFD069");
+                leVisiteur = VisiteurManager.ChargerVisiteur(login, password);
                 //délégue
                 //leVisiteur = VisiteurManager.ChargerVisiteur("r58", "secret18");
                 //responsable
@@ -96,12 +97,43 @@ namespace GSBCR.UI
             consultPraticiens.ShowDialog();
         }
 
-
-        private void listeDesVisiteursToolStripMenuItem_Click(object sender, EventArgs e)
+        private void lesMedicamentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmVisiteurs fenetreVisiteurs = new FrmVisiteurs();
+            FrmConsulterMedicament Medoc = new FrmConsulterMedicament();
+            Medoc.ShowDialog();
+        }
 
-            fenetreVisiteurs.ShowDialog();
+        private void mesRapportsValidésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            List<RAPPORT_VISITE> lesRapports = null;
+            try
+            {
+                lesRapports = VisiteurManager.ChargerRapportVisiteurFinis(leVisiteur.VIS_MATRICULE);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            if (lesRapports != null && lesRapports.Count != 0)
+            {
+                FrmConsulterRapportValide f = new FrmConsulterRapportValide(leVisiteur, lesRapports);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Aucun rapport de visite n'a été validé", "Gestion Rapports de visite", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void modifierConsulterToolStripMenuItem_Click(object sender, EventArgs e) {
+            FrmUpdatePersoInfo info = new FrmUpdatePersoInfo(leVisiteur);
+            info.ShowDialog();
+        }
+
+        private void changerMonMotDePasseToolStripMenuItem_Click(object sender, EventArgs e) {
+            FrmUpdateMdp password = new FrmUpdateMdp();
+            password.ShowDialog();
         }
     }
 }

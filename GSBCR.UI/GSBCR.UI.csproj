@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmConsulterMedicament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsulterMedicament.Designer.cs">
+      <DependentUpon>FrmConsulterMedicament.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConsulterRapportRegion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,12 +119,6 @@
     <Compile Include="FrmSaisir.designer.cs">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSaisirRapportRegion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmSaisirRapportRegion.Designer.cs">
-      <DependentUpon>FrmSaisirRapportRegion.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmUpdateMdp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,8 +145,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmConsulterRapportRegion.resx">
-      <DependentUpon>FrmConsulterRapportRegion.cs</DependentUpon>
+    <EmbeddedResource Include="FrmConsulterMedicament.resx">
+      <DependentUpon>FrmConsulterMedicament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsulterRapportValide.resx">
+      <DependentUpon>FrmConsulterRapportValide.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -189,8 +192,6 @@
     <None Include="Properties\DataSources\GSBCR.BLL.Manager.datasource" />
     <None Include="Properties\DataSources\GSBCR.DC.RapportVisite.datasource" />
     <None Include="Properties\DataSources\GSBCR.modele.RAPPORT_VISITE.datasource" />
-    <None Include="Properties\DataSources\GSBCR.modele.VAFFECTATION.datasource" />
-    <None Include="Properties\DataSources\GSBCR.modele.VISITEUR.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
