@@ -69,8 +69,7 @@ namespace GSBCR.UI
         private void btn_voirRapport_Click(object sender, EventArgs e)
         {
             
-            //FrmSaisir f = new FrmSaisir();
-            //f.ShowDialog();
+           
         }
     }
 }

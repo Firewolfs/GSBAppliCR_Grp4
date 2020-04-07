@@ -54,7 +54,6 @@
             this.btnVoirRapport.TabIndex = 5;
             this.btnVoirRapport.Text = "Voir les rapports de visite";
             this.btnVoirRapport.UseVisualStyleBackColor = true;
-            this.btnVoirRapport.Visible = false;
             this.btnVoirRapport.Click += new System.EventHandler(this.btn_voirRapport_Click);
             // 
             // button1
