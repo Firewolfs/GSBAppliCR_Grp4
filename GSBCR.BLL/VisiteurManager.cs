@@ -30,6 +30,20 @@ namespace GSBCR.BLL
 
 
         /// <summary>
+        /// Permet de charger une région à partir de son identifiant
+        /// </summary>
+        /// <param name="codeRegion">Code de la région à charger</param>
+        /// <returns>La région spécifié</returns>
+        public static REGION ChargerUneRegion(string codeRegion)
+        {
+            REGION laRegion = new RegionDAO().FindById(codeRegion);
+
+            return laRegion;
+
+        }
+
+
+        /// <summary>
         /// Permet de charger la dernière affectation du visiteur
         /// et donc son profil (visiteur, délégué, responsabe secteur) et sa région
         /// </summary>
@@ -90,7 +104,28 @@ namespace GSBCR.BLL
 
             return lr;
         }
-        
+
+
+        /// <summary>
+        /// Permet de charger les rapports terminés et consultés du visiteur (état 3) 
+        /// </summary>
+        /// <param name="m">matricule Visiteur</param>
+        /// <returns>List<RAPPORT_VISITE>/returns>
+        public static List<RAPPORT_VISITE> ChargerRapportVisiteurFinisEtLus(String m)
+        {
+            List<RAPPORT_VISITE> lr;
+
+            List<string> lm = new List<string>();
+            List<int> le = new List<int>();
+
+            lm.Add(m);
+            le.Add(3);
+
+            lr = new RapportVisiteDAO().FindByEtatEtVisiteur(lm, le);
+
+            return lr;
+        }
+
         /// <summary>
         /// Permet de créer un rapport dans la base de données 
         /// </summary>

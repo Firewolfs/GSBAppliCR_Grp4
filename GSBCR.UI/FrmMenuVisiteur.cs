@@ -95,5 +95,13 @@ namespace GSBCR.UI
             FrmPraticiens consultPraticiens = new FrmPraticiens();
             consultPraticiens.ShowDialog();
         }
+
+
+        private void listeDesVisiteursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVisiteurs fenetreVisiteurs = new FrmVisiteurs();
+
+            fenetreVisiteurs.ShowDialog();
+        }
     }
 }

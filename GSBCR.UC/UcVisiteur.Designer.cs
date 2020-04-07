@@ -102,7 +102,6 @@
             // 
             // dtp_DateAffectation
             // 
-            this.dtp_DateAffectation.Enabled = false;
             this.dtp_DateAffectation.Location = new System.Drawing.Point(149, 563);
             this.dtp_DateAffectation.Name = "dtp_DateAffectation";
             this.dtp_DateAffectation.Size = new System.Drawing.Size(200, 20);
@@ -164,7 +163,6 @@
             // 
             // dtp_DateEmbauche
             // 
-            this.dtp_DateEmbauche.Enabled = false;
             this.dtp_DateEmbauche.Location = new System.Drawing.Point(149, 401);
             this.dtp_DateEmbauche.Name = "dtp_DateEmbauche";
             this.dtp_DateEmbauche.Size = new System.Drawing.Size(200, 20);
