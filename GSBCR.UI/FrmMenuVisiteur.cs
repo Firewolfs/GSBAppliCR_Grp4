@@ -132,7 +132,7 @@ namespace GSBCR.UI
         }
 
         private void changerMonMotDePasseToolStripMenuItem_Click(object sender, EventArgs e) {
-            FrmUpdateMdp password = new FrmUpdateMdp();
+            FrmUpdateMdp password = new FrmUpdateMdp(leVisiteur);
             password.ShowDialog();
         }
 

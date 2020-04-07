@@ -38,6 +38,7 @@
             this.txtConfirmNewMdp = new System.Windows.Forms.TextBox();
             this.btnValid = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -59,13 +60,12 @@
             this.label2.Size = new System.Drawing.Size(389, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "_________________________";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(83, 121);
+            this.label3.Location = new System.Drawing.Point(82, 133);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(134, 16);
             this.label3.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(83, 197);
+            this.label4.Location = new System.Drawing.Point(82, 209);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(148, 16);
             this.label4.TabIndex = 3;
@@ -85,7 +85,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(83, 272);
+            this.label5.Location = new System.Drawing.Point(82, 284);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(205, 16);
             this.label5.TabIndex = 4;
@@ -93,22 +93,25 @@
             // 
             // txtAncMdp
             // 
-            this.txtAncMdp.Location = new System.Drawing.Point(137, 150);
+            this.txtAncMdp.Location = new System.Drawing.Point(136, 162);
             this.txtAncMdp.Name = "txtAncMdp";
+            this.txtAncMdp.PasswordChar = '*';
             this.txtAncMdp.Size = new System.Drawing.Size(214, 20);
             this.txtAncMdp.TabIndex = 5;
             // 
             // txtNewMdp
             // 
-            this.txtNewMdp.Location = new System.Drawing.Point(137, 227);
+            this.txtNewMdp.Location = new System.Drawing.Point(136, 239);
             this.txtNewMdp.Name = "txtNewMdp";
+            this.txtNewMdp.PasswordChar = '*';
             this.txtNewMdp.Size = new System.Drawing.Size(214, 20);
             this.txtNewMdp.TabIndex = 6;
             // 
             // txtConfirmNewMdp
             // 
-            this.txtConfirmNewMdp.Location = new System.Drawing.Point(137, 300);
+            this.txtConfirmNewMdp.Location = new System.Drawing.Point(136, 312);
             this.txtConfirmNewMdp.Name = "txtConfirmNewMdp";
+            this.txtConfirmNewMdp.PasswordChar = '*';
             this.txtConfirmNewMdp.Size = new System.Drawing.Size(214, 20);
             this.txtConfirmNewMdp.TabIndex = 7;
             // 
@@ -121,6 +124,7 @@
             this.btnValid.TabIndex = 8;
             this.btnValid.Text = "Valider";
             this.btnValid.UseVisualStyleBackColor = true;
+            this.btnValid.Click += new System.EventHandler(this.btnValid_Click);
             // 
             // btnCancel
             // 
@@ -131,12 +135,26 @@
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Annuler";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(51, 95);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(51, 16);
+            this.lblError.TabIndex = 10;
+            this.lblError.Text = "label6";
+            this.lblError.Visible = false;
             // 
             // FrmUpdateMdp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 450);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnValid);
             this.Controls.Add(this.txtConfirmNewMdp);
@@ -166,5 +184,6 @@
         private System.Windows.Forms.TextBox txtConfirmNewMdp;
         private System.Windows.Forms.Button btnValid;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblError;
     }
 }

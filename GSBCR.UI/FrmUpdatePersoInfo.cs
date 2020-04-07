@@ -32,7 +32,14 @@ namespace GSBCR.UI
         private void btnCancel_Click(object sender, EventArgs e) { this.Close(); }
 
         private void btnValid_Click(object sender, EventArgs e) {
-
+            if (VisiteurManager.updateVisiteur(txtMatri.Text, txtAddr.Text, txtCp.Text, txtTown.Text, txtPhone.Text, txtMail.Text)) {
+                MessageBox.Show("Mise à jour de vos informations effectué avec succes.", "Mise à Jour des données"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }else {
+                MessageBox.Show("Un problème est survenue lors de la mise à jour de vos informations", "Mise à Jour des données"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
