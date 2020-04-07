@@ -81,14 +81,6 @@ namespace GSBCR.UI
             txtAutre.Text = r.RAP_MOTIFAUTRE;
             nupCoef.Value = Convert.ToDecimal(r.RAP_CONFIANCE);
             txtBilan.Text = r.RAP_BILAN;
-            if (r.RAP_ETAT == "1")
-            {
-                chbDefinitif.Checked = false;
-            }
-            else
-            {
-                chbDefinitif.Checked = true;
-            }
             //n° praticien non null
             cbxNomPraticien.SelectedValue = r.RAP_PRANUM;
             //motif visite non null
@@ -102,7 +94,7 @@ namespace GSBCR.UI
             else
             {
                 cbxMed1.SelectedValue = r.RAP_MED1;
-                
+
             }
             if (String.IsNullOrEmpty(r.RAP_MED2))
             {
@@ -112,8 +104,17 @@ namespace GSBCR.UI
             else
             {
                 cbxMed2.SelectedValue = r.RAP_MED2;
-                
+
             }
+            if (r.RAP_ETAT == "1")
+            {
+                chbDefinitif.Checked = false;
+            }
+            else
+            {
+                chbDefinitif.Checked = true;
+            }
+            
         }
 
         private void btnValider_Click(object sender, EventArgs e)
@@ -288,7 +289,7 @@ namespace GSBCR.UI
                 {
                     errorProvider1.SetError(this.txtBilan, "obligatoire");
                 }
-                if (cbxMotif.SelectedValue.ToString()=="AU" && string.IsNullOrEmpty(txtAutre.Text))
+                if (cbxMotif.SelectedValue.ToString() == "AU" && string.IsNullOrEmpty(txtAutre.Text))
                 {
                     errorProvider1.SetError(this.txtAutre, "obligatoire");
                 }
@@ -299,6 +300,7 @@ namespace GSBCR.UI
                 errorProvider1.SetError(txtAutre, "");
             }
         }
+
         private bool verifier()
         {
             bool ok = true;
