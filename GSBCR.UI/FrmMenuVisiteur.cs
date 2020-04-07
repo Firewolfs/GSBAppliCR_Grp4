@@ -15,6 +15,7 @@ namespace GSBCR.UI
     {
         private VISITEUR leVisiteur;
         private VAFFECTATION leProfil;
+
         public FrmMenuVisiteur(String login, String password)
         {
             InitializeComponent();
@@ -124,6 +125,15 @@ namespace GSBCR.UI
                 MessageBox.Show("Aucun rapport de visite n'a été validé", "Gestion Rapports de visite", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-    
+
+        private void modifierConsulterToolStripMenuItem_Click(object sender, EventArgs e) {
+            FrmUpdatePersoInfo info = new FrmUpdatePersoInfo(leVisiteur);
+            info.ShowDialog();
+        }
+
+        private void changerMonMotDePasseToolStripMenuItem_Click(object sender, EventArgs e) {
+            FrmUpdateMdp password = new FrmUpdateMdp();
+            password.ShowDialog();
+        }
     }
 }

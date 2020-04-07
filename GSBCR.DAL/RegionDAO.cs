@@ -19,7 +19,7 @@ namespace GSBCR.DAL {
 
             REGION reg = null;
             using (var context = new GSB_visite_LEGUILLIEREntities()) {
-                var request = from r in context.REGION
+                var request = from r in context.REGION.Include("LeSecteur")
                               where r.REG_CODE == code
                               select r;
 

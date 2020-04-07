@@ -59,7 +59,6 @@
             this.label1.Size = new System.Drawing.Size(317, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Informations Personnelles";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -225,6 +224,7 @@
             this.btnValid.TabIndex = 18;
             this.btnValid.Text = "Valider";
             this.btnValid.UseVisualStyleBackColor = true;
+            this.btnValid.Click += new System.EventHandler(this.btnValid_Click);
             // 
             // btnCancel
             // 
@@ -235,6 +235,7 @@
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "Annuler";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FrmUpdatePersoInfo
             // 

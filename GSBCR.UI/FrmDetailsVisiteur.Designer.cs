@@ -69,6 +69,7 @@
             this.Controls.Add(this.lblTitre);
             this.Name = "FrmDetailsVisiteur";
             this.Text = "Visiteurs";
+            this.Load += new System.EventHandler(this.FrmDetailsVisiteur_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

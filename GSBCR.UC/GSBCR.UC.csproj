@@ -75,6 +75,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GSBCR.BLL\GSBCR.BLL.csproj">
+      <Project>{87304d8d-be1e-436a-9223-6d9f51178f9f}</Project>
+      <Name>GSBCR.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GSBCR.modele\GSBCR.modele.csproj">
       <Project>{96cb56b1-0631-4551-8d65-65adc998c487}</Project>
       <Name>GSBCR.modele</Name>
