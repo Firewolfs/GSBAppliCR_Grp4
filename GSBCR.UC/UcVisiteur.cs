@@ -45,6 +45,7 @@ namespace GSBCR.UC
             txt_SecteurLibelle.Text = laRegion.LeSecteur.SEC_LIBELLE;
             txt_RegionCode.Text = laRegion.REG_CODE;
             txt_RegionLibelle.Text = laRegion.REG_NOM;
+            txt_Role.Text = laAffectation.TRA_ROLE;
             dtp_DateAffectation.Value = laAffectation.JJMMAA;
             dtp_DateAffectation.MinDate = laAffectation.JJMMAA;
             dtp_DateAffectation.MaxDate = laAffectation.JJMMAA;

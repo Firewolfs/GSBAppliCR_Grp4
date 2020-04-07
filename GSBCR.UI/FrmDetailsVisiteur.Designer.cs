@@ -56,14 +56,14 @@
             // 
             this.ucVisiteur1.Location = new System.Drawing.Point(12, 53);
             this.ucVisiteur1.Name = "ucVisiteur1";
-            this.ucVisiteur1.Size = new System.Drawing.Size(420, 648);
+            this.ucVisiteur1.Size = new System.Drawing.Size(420, 694);
             this.ucVisiteur1.TabIndex = 37;
             // 
             // FrmDetailsVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 718);
+            this.ClientSize = new System.Drawing.Size(444, 764);
             this.Controls.Add(this.ucVisiteur1);
             this.Controls.Add(this.pnl_Separateur);
             this.Controls.Add(this.lblTitre);

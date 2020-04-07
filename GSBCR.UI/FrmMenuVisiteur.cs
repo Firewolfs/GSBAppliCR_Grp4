@@ -135,5 +135,11 @@ namespace GSBCR.UI
             FrmUpdateMdp password = new FrmUpdateMdp();
             password.ShowDialog();
         }
+
+        private void listeDesVisiteursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVisiteurs fenetreVisiteurs = new FrmVisiteurs(leVisiteur);
+            fenetreVisiteurs.ShowDialog();
+        }
     }
 }

@@ -43,7 +43,7 @@ namespace GSBCR.DAL
             {
                 //désactiver le chargement différé
                 //context.Configuration.LazyLoadingEnabled = false;
-                if (role == "Responsable")
+                if (role == "Délégué")
                 {
                     var req = from vaff in context.VAFFECTATION
                               where vaff.REG_CODE == regionCode && vaff.TRA_ROLE == "Visiteur"
@@ -51,7 +51,7 @@ namespace GSBCR.DAL
 
                     lv = req.ToList();
                 }
-                else if (role == "Délégué")
+                else /*if (role == "Responsable")*/
                 {
                     var req = from vaff in context.VAFFECTATION
                               where vaff.REG_CODE == regionCode && vaff.TRA_ROLE == "Visiteur" || vaff.TRA_ROLE == "Délégué"

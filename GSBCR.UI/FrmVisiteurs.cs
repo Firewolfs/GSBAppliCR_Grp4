@@ -14,16 +14,22 @@ namespace GSBCR.UI
 {
     public partial class FrmVisiteurs : Form
     {
-        public FrmVisiteurs()
+
+        private VISITEUR leUtilisateur;
+        private VAFFECTATION laAffectationUtilisateur;
+
+        public FrmVisiteurs(VISITEUR leUtilisateur)
         {
             InitializeComponent();
+            this.leUtilisateur = leUtilisateur;
         }
 
         private void FrmVisiteurs_Load(object sender, EventArgs e)
         {
             List<VISITEUR> lesViteursRegion;
+            laAffectationUtilisateur = VisiteurManager.ChargerAffectationVisiteur(leUtilisateur.VIS_MATRICULE);
 
-            lesViteursRegion = DelegueManager.ChargerVisiteurByRegion("RA", "Délégué");
+            lesViteursRegion = DelegueManager.ChargerVisiteurByRegion(laAffectationUtilisateur.REG_CODE, laAffectationUtilisateur.TRA_ROLE);
 
             bsVisiteursRegion.DataSource = lesViteursRegion;
         }

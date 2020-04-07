@@ -59,6 +59,8 @@
             this.lbl_NbRapportsConsultes = new System.Windows.Forms.Label();
             this.txt_NbRapportsConsultes = new System.Windows.Forms.TextBox();
             this.btn_ConsulterRapports = new System.Windows.Forms.Button();
+            this.lbl_Role = new System.Windows.Forms.Label();
+            this.txt_Role = new System.Windows.Forms.TextBox();
             this.pnl_Region.SuspendLayout();
             this.pnl_Secteur.SuspendLayout();
             this.pnl_Ville.SuspendLayout();
@@ -67,7 +69,7 @@
             // txt_Telephone
             // 
             this.txt_Telephone.BackColor = System.Drawing.Color.White;
-            this.txt_Telephone.Location = new System.Drawing.Point(149, 239);
+            this.txt_Telephone.Location = new System.Drawing.Point(149, 238);
             this.txt_Telephone.Name = "txt_Telephone";
             this.txt_Telephone.ReadOnly = true;
             this.txt_Telephone.Size = new System.Drawing.Size(230, 20);
@@ -76,7 +78,7 @@
             // lbl_Telephone
             // 
             this.lbl_Telephone.AutoSize = true;
-            this.lbl_Telephone.Location = new System.Drawing.Point(30, 243);
+            this.lbl_Telephone.Location = new System.Drawing.Point(30, 242);
             this.lbl_Telephone.Name = "lbl_Telephone";
             this.lbl_Telephone.Size = new System.Drawing.Size(58, 13);
             this.lbl_Telephone.TabIndex = 42;
@@ -102,7 +104,7 @@
             // 
             // dtp_DateAffectation
             // 
-            this.dtp_DateAffectation.Location = new System.Drawing.Point(149, 563);
+            this.dtp_DateAffectation.Location = new System.Drawing.Point(149, 609);
             this.dtp_DateAffectation.Name = "dtp_DateAffectation";
             this.dtp_DateAffectation.Size = new System.Drawing.Size(200, 20);
             this.dtp_DateAffectation.TabIndex = 39;
@@ -111,7 +113,7 @@
             // 
             this.pnl_Region.Controls.Add(this.txt_RegionLibelle);
             this.pnl_Region.Controls.Add(this.txt_RegionCode);
-            this.pnl_Region.Location = new System.Drawing.Point(149, 507);
+            this.pnl_Region.Location = new System.Drawing.Point(149, 501);
             this.pnl_Region.Name = "pnl_Region";
             this.pnl_Region.Size = new System.Drawing.Size(230, 24);
             this.pnl_Region.TabIndex = 38;
@@ -138,7 +140,7 @@
             // 
             this.pnl_Secteur.Controls.Add(this.txt_SecteurLibelle);
             this.pnl_Secteur.Controls.Add(this.txt_SecteurCode);
-            this.pnl_Secteur.Location = new System.Drawing.Point(149, 453);
+            this.pnl_Secteur.Location = new System.Drawing.Point(149, 448);
             this.pnl_Secteur.Name = "pnl_Secteur";
             this.pnl_Secteur.Size = new System.Drawing.Size(230, 24);
             this.pnl_Secteur.TabIndex = 37;
@@ -163,7 +165,7 @@
             // 
             // dtp_DateEmbauche
             // 
-            this.dtp_DateEmbauche.Location = new System.Drawing.Point(149, 401);
+            this.dtp_DateEmbauche.Location = new System.Drawing.Point(149, 397);
             this.dtp_DateEmbauche.Name = "dtp_DateEmbauche";
             this.dtp_DateEmbauche.Size = new System.Drawing.Size(200, 20);
             this.dtp_DateEmbauche.TabIndex = 36;
@@ -171,7 +173,7 @@
             // txt_Adresse
             // 
             this.txt_Adresse.BackColor = System.Drawing.Color.White;
-            this.txt_Adresse.Location = new System.Drawing.Point(149, 293);
+            this.txt_Adresse.Location = new System.Drawing.Point(149, 291);
             this.txt_Adresse.Name = "txt_Adresse";
             this.txt_Adresse.ReadOnly = true;
             this.txt_Adresse.Size = new System.Drawing.Size(230, 20);
@@ -181,7 +183,7 @@
             // 
             this.pnl_Ville.Controls.Add(this.txt_Ville);
             this.pnl_Ville.Controls.Add(this.txt_CodePostal);
-            this.pnl_Ville.Location = new System.Drawing.Point(149, 345);
+            this.pnl_Ville.Location = new System.Drawing.Point(149, 342);
             this.pnl_Ville.Name = "pnl_Ville";
             this.pnl_Ville.Size = new System.Drawing.Size(230, 24);
             this.pnl_Ville.TabIndex = 34;
@@ -207,7 +209,7 @@
             // txt_Prenom
             // 
             this.txt_Prenom.BackColor = System.Drawing.Color.White;
-            this.txt_Prenom.Location = new System.Drawing.Point(149, 131);
+            this.txt_Prenom.Location = new System.Drawing.Point(149, 132);
             this.txt_Prenom.Name = "txt_Prenom";
             this.txt_Prenom.ReadOnly = true;
             this.txt_Prenom.Size = new System.Drawing.Size(120, 20);
@@ -216,7 +218,7 @@
             // txt_Nom
             // 
             this.txt_Nom.BackColor = System.Drawing.Color.White;
-            this.txt_Nom.Location = new System.Drawing.Point(149, 77);
+            this.txt_Nom.Location = new System.Drawing.Point(149, 79);
             this.txt_Nom.Name = "txt_Nom";
             this.txt_Nom.ReadOnly = true;
             this.txt_Nom.Size = new System.Drawing.Size(120, 20);
@@ -225,7 +227,7 @@
             // lbl_DateAffectation
             // 
             this.lbl_DateAffectation.AutoSize = true;
-            this.lbl_DateAffectation.Location = new System.Drawing.Point(30, 567);
+            this.lbl_DateAffectation.Location = new System.Drawing.Point(30, 613);
             this.lbl_DateAffectation.Name = "lbl_DateAffectation";
             this.lbl_DateAffectation.Size = new System.Drawing.Size(102, 13);
             this.lbl_DateAffectation.TabIndex = 31;
@@ -234,7 +236,7 @@
             // lbl_Region
             // 
             this.lbl_Region.AutoSize = true;
-            this.lbl_Region.Location = new System.Drawing.Point(30, 513);
+            this.lbl_Region.Location = new System.Drawing.Point(30, 507);
             this.lbl_Region.Name = "lbl_Region";
             this.lbl_Region.Size = new System.Drawing.Size(41, 13);
             this.lbl_Region.TabIndex = 30;
@@ -243,7 +245,7 @@
             // lbl_Secteur
             // 
             this.lbl_Secteur.AutoSize = true;
-            this.lbl_Secteur.Location = new System.Drawing.Point(30, 459);
+            this.lbl_Secteur.Location = new System.Drawing.Point(30, 454);
             this.lbl_Secteur.Name = "lbl_Secteur";
             this.lbl_Secteur.Size = new System.Drawing.Size(44, 13);
             this.lbl_Secteur.TabIndex = 29;
@@ -252,7 +254,7 @@
             // lbl_DateEmbauche
             // 
             this.lbl_DateEmbauche.AutoSize = true;
-            this.lbl_DateEmbauche.Location = new System.Drawing.Point(30, 405);
+            this.lbl_DateEmbauche.Location = new System.Drawing.Point(30, 401);
             this.lbl_DateEmbauche.Name = "lbl_DateEmbauche";
             this.lbl_DateEmbauche.Size = new System.Drawing.Size(102, 13);
             this.lbl_DateEmbauche.TabIndex = 28;
@@ -261,7 +263,7 @@
             // lbl_Ville
             // 
             this.lbl_Ville.AutoSize = true;
-            this.lbl_Ville.Location = new System.Drawing.Point(30, 351);
+            this.lbl_Ville.Location = new System.Drawing.Point(30, 348);
             this.lbl_Ville.Name = "lbl_Ville";
             this.lbl_Ville.Size = new System.Drawing.Size(26, 13);
             this.lbl_Ville.TabIndex = 27;
@@ -270,7 +272,7 @@
             // lbl_Adresse
             // 
             this.lbl_Adresse.AutoSize = true;
-            this.lbl_Adresse.Location = new System.Drawing.Point(30, 297);
+            this.lbl_Adresse.Location = new System.Drawing.Point(30, 295);
             this.lbl_Adresse.Name = "lbl_Adresse";
             this.lbl_Adresse.Size = new System.Drawing.Size(45, 13);
             this.lbl_Adresse.TabIndex = 26;
@@ -279,7 +281,7 @@
             // lbl_Prenom
             // 
             this.lbl_Prenom.AutoSize = true;
-            this.lbl_Prenom.Location = new System.Drawing.Point(30, 135);
+            this.lbl_Prenom.Location = new System.Drawing.Point(30, 136);
             this.lbl_Prenom.Name = "lbl_Prenom";
             this.lbl_Prenom.Size = new System.Drawing.Size(43, 13);
             this.lbl_Prenom.TabIndex = 25;
@@ -288,7 +290,7 @@
             // lbl_Nom
             // 
             this.lbl_Nom.AutoSize = true;
-            this.lbl_Nom.Location = new System.Drawing.Point(30, 81);
+            this.lbl_Nom.Location = new System.Drawing.Point(30, 83);
             this.lbl_Nom.Name = "lbl_Nom";
             this.lbl_Nom.Size = new System.Drawing.Size(29, 13);
             this.lbl_Nom.TabIndex = 24;
@@ -315,7 +317,7 @@
             // lbl_NbRapportsConsultes
             // 
             this.lbl_NbRapportsConsultes.AutoSize = true;
-            this.lbl_NbRapportsConsultes.Location = new System.Drawing.Point(30, 621);
+            this.lbl_NbRapportsConsultes.Location = new System.Drawing.Point(30, 666);
             this.lbl_NbRapportsConsultes.Name = "lbl_NbRapportsConsultes";
             this.lbl_NbRapportsConsultes.Size = new System.Drawing.Size(98, 13);
             this.lbl_NbRapportsConsultes.TabIndex = 44;
@@ -324,7 +326,7 @@
             // txt_NbRapportsConsultes
             // 
             this.txt_NbRapportsConsultes.BackColor = System.Drawing.Color.White;
-            this.txt_NbRapportsConsultes.Location = new System.Drawing.Point(149, 617);
+            this.txt_NbRapportsConsultes.Location = new System.Drawing.Point(149, 662);
             this.txt_NbRapportsConsultes.Name = "txt_NbRapportsConsultes";
             this.txt_NbRapportsConsultes.ReadOnly = true;
             this.txt_NbRapportsConsultes.Size = new System.Drawing.Size(70, 20);
@@ -332,17 +334,37 @@
             // 
             // btn_ConsulterRapports
             // 
-            this.btn_ConsulterRapports.Location = new System.Drawing.Point(225, 616);
+            this.btn_ConsulterRapports.Location = new System.Drawing.Point(225, 661);
             this.btn_ConsulterRapports.Name = "btn_ConsulterRapports";
             this.btn_ConsulterRapports.Size = new System.Drawing.Size(75, 23);
             this.btn_ConsulterRapports.TabIndex = 46;
             this.btn_ConsulterRapports.Text = "Consulter";
             this.btn_ConsulterRapports.UseVisualStyleBackColor = true;
             // 
+            // lbl_Role
+            // 
+            this.lbl_Role.AutoSize = true;
+            this.lbl_Role.Location = new System.Drawing.Point(30, 560);
+            this.lbl_Role.Name = "lbl_Role";
+            this.lbl_Role.Size = new System.Drawing.Size(29, 13);
+            this.lbl_Role.TabIndex = 47;
+            this.lbl_Role.Text = "Rôle";
+            // 
+            // txt_Role
+            // 
+            this.txt_Role.BackColor = System.Drawing.Color.White;
+            this.txt_Role.Location = new System.Drawing.Point(149, 556);
+            this.txt_Role.Name = "txt_Role";
+            this.txt_Role.ReadOnly = true;
+            this.txt_Role.Size = new System.Drawing.Size(120, 20);
+            this.txt_Role.TabIndex = 48;
+            // 
             // UcVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txt_Role);
+            this.Controls.Add(this.lbl_Role);
             this.Controls.Add(this.btn_ConsulterRapports);
             this.Controls.Add(this.txt_NbRapportsConsultes);
             this.Controls.Add(this.lbl_NbRapportsConsultes);
@@ -369,7 +391,7 @@
             this.Controls.Add(this.txt_Matricule);
             this.Controls.Add(this.lbl_Matricule);
             this.Name = "UcVisiteur";
-            this.Size = new System.Drawing.Size(420, 663);
+            this.Size = new System.Drawing.Size(420, 714);
             this.pnl_Region.ResumeLayout(false);
             this.pnl_Region.PerformLayout();
             this.pnl_Secteur.ResumeLayout(false);
@@ -414,5 +436,7 @@
         private System.Windows.Forms.Label lbl_NbRapportsConsultes;
         private System.Windows.Forms.TextBox txt_NbRapportsConsultes;
         private System.Windows.Forms.Button btn_ConsulterRapports;
+        private System.Windows.Forms.Label lbl_Role;
+        private System.Windows.Forms.TextBox txt_Role;
     }
 }

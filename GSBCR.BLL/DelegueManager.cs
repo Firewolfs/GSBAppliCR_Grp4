@@ -21,10 +21,13 @@ namespace GSBCR.BLL
             List<VISITEUR> lv = new List<VISITEUR>();
             VISITEUR vis;
             List<VAFFECTATION> lvaff = new VaffectationDAO().FindByRegion(regionCode, role);
-            foreach (VAFFECTATION vaff in lvaff)
+            if (lvaff != null)
             {
-                vis = new VisiteurDAO().FindById(vaff.VIS_MATRICULE);
-                lv.Add(vis);
+                foreach (VAFFECTATION vaff in lvaff)
+                {
+                    vis = new VisiteurDAO().FindById(vaff.VIS_MATRICULE);
+                    lv.Add(vis);
+                }
             }
             return lv;
         }

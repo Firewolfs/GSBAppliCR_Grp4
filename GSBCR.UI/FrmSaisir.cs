@@ -22,6 +22,7 @@ namespace GSBCR.UI
         private RAPPORT_VISITE r;
         //maj = vrai si création/modification
         //maj = faux si consultation
+
         public FrmSaisir(RAPPORT_VISITE r, bool maj)
         {
             InitializeComponent();
@@ -67,6 +68,7 @@ namespace GSBCR.UI
                 btnValider.Visible = false;
                 lblTitre.Text = "Consultation d'un rapport";
             }
+
                        
         }
 
