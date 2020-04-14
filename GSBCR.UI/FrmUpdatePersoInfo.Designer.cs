@@ -48,6 +48,10 @@
             this.txtMatri = new System.Windows.Forms.TextBox();
             this.btnValid = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.lblCp = new System.Windows.Forms.Label();
+            this.lblTown = new System.Windows.Forms.Label();
+            this.lblMail = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -237,11 +241,59 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.ForeColor = System.Drawing.Color.Red;
+            this.lblPhone.Location = new System.Drawing.Point(660, 151);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(51, 13);
+            this.lblPhone.TabIndex = 20;
+            this.lblPhone.Text = "* Invalide";
+            this.lblPhone.Visible = false;
+            // 
+            // lblCp
+            // 
+            this.lblCp.AutoSize = true;
+            this.lblCp.ForeColor = System.Drawing.Color.Red;
+            this.lblCp.Location = new System.Drawing.Point(227, 330);
+            this.lblCp.Name = "lblCp";
+            this.lblCp.Size = new System.Drawing.Size(51, 13);
+            this.lblCp.TabIndex = 21;
+            this.lblCp.Text = "* Invalide";
+            this.lblCp.Visible = false;
+            // 
+            // lblTown
+            // 
+            this.lblTown.AutoSize = true;
+            this.lblTown.ForeColor = System.Drawing.Color.Red;
+            this.lblTown.Location = new System.Drawing.Point(294, 371);
+            this.lblTown.Name = "lblTown";
+            this.lblTown.Size = new System.Drawing.Size(51, 13);
+            this.lblTown.TabIndex = 22;
+            this.lblTown.Text = "* Invalide";
+            this.lblTown.Visible = false;
+            // 
+            // lblMail
+            // 
+            this.lblMail.AutoSize = true;
+            this.lblMail.ForeColor = System.Drawing.Color.Red;
+            this.lblMail.Location = new System.Drawing.Point(660, 186);
+            this.lblMail.Name = "lblMail";
+            this.lblMail.Size = new System.Drawing.Size(51, 13);
+            this.lblMail.TabIndex = 23;
+            this.lblMail.Text = "* Invalide";
+            this.lblMail.Visible = false;
+            // 
             // FrmUpdatePersoInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblMail);
+            this.Controls.Add(this.lblTown);
+            this.Controls.Add(this.lblCp);
+            this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnValid);
             this.Controls.Add(this.txtMatri);
@@ -291,5 +343,9 @@
         private System.Windows.Forms.TextBox txtMatri;
         private System.Windows.Forms.Button btnValid;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Label lblCp;
+        private System.Windows.Forms.Label lblTown;
+        private System.Windows.Forms.Label lblMail;
     }
 }

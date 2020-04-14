@@ -127,12 +127,12 @@ namespace GSBCR.UI
         }
 
         private void modifierConsulterToolStripMenuItem_Click(object sender, EventArgs e) {
-            FrmUpdatePersoInfo info = new FrmUpdatePersoInfo(leVisiteur);
+            FrmUpdatePersoInfo info = new FrmUpdatePersoInfo(VisiteurManager.loadVisiteur(leVisiteur.VIS_MATRICULE));
             info.ShowDialog();
         }
 
         private void changerMonMotDePasseToolStripMenuItem_Click(object sender, EventArgs e) {
-            FrmUpdateMdp password = new FrmUpdateMdp(leVisiteur);
+            FrmUpdateMdp password = new FrmUpdateMdp(VisiteurManager.loadVisiteur(leVisiteur.VIS_MATRICULE));
             password.ShowDialog();
         }
 
