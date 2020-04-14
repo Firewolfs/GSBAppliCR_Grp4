@@ -15,18 +15,18 @@ namespace GSBCR.UI
     public partial class FrmDetailsVisiteur : Form
     {
 
-        private VISITEUR leVisiteur;
+        private VAFFECTATION laAffectation;
 
-        public FrmDetailsVisiteur(VISITEUR leVisiteur)
+        public FrmDetailsVisiteur(VAFFECTATION laAffectation)
         {
             InitializeComponent();
-            this.leVisiteur = leVisiteur;
+            this.laAffectation = laAffectation;
         }
 
         private void FrmDetailsVisiteur_Load(object sender, EventArgs e)
         {
 
-            ucVisiteur1.AfficherVisiteur(leVisiteur);
+            ucVisiteur1.AfficherVisiteur(laAffectation);
 
         }
     }

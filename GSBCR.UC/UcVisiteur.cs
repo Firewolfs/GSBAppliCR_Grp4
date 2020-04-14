@@ -23,10 +23,10 @@ namespace GSBCR.UC
         /// <summary>
         /// Affiche un visiteur dans le usercontrol
         /// </summary>
-        /// <param name="leVisiteur">Objet visiteur à afficher</param>
-        public void AfficherVisiteur(VISITEUR leVisiteur)
+        /// <param name="laAffectation">Visiteur à afficher</param>
+        public void AfficherVisiteur(VAFFECTATION laAffectation)
         {
-            VAFFECTATION laAffectation = VisiteurManager.ChargerAffectationVisiteur(leVisiteur.VIS_MATRICULE);
+            VISITEUR leVisiteur = VisiteurManager.ChargerInfosVisiteur(laAffectation.VIS_MATRICULE);
             REGION laRegion = VisiteurManager.ChargerUneRegion(laAffectation.REG_CODE);
             List<RAPPORT_VISITE> lesRapportsConsultes = VisiteurManager.ChargerRapportVisiteurFinisEtLus(leVisiteur.VIS_MATRICULE);
 

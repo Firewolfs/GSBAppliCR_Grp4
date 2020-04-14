@@ -51,7 +51,7 @@ namespace GSBCR.DAL
 
                     lv = req.ToList();
                 }
-                else /*if (role == "Responsable")*/
+                else if (role == "Responsable")
                 {
                     var req = from vaff in context.VAFFECTATION
                               where vaff.REG_CODE == regionCode && vaff.TRA_ROLE == "Visiteur" || vaff.TRA_ROLE == "Délégué"

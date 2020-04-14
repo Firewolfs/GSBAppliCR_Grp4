@@ -26,37 +26,37 @@ namespace GSBCR.UI
 
         private void FrmVisiteurs_Load(object sender, EventArgs e)
         {
-            List<VISITEUR> lesViteursRegion;
+            List<VAFFECTATION> lesAffectationsRegion;
             laAffectationUtilisateur = VisiteurManager.ChargerAffectationVisiteur(leUtilisateur.VIS_MATRICULE);
 
-            lesViteursRegion = DelegueManager.ChargerVisiteurByRegion(laAffectationUtilisateur.REG_CODE, laAffectationUtilisateur.TRA_ROLE);
+            lesAffectationsRegion = DelegueManager.ChargerAffectationsVisiteursByRegion(laAffectationUtilisateur.REG_CODE, laAffectationUtilisateur.TRA_ROLE);
 
-            bsVisiteursRegion.DataSource = lesViteursRegion;
+            bsVisiteursRegion.DataSource = lesAffectationsRegion;
         }
 
         private void dgv_Visiteurs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            VISITEUR visiteurSelect;
+            VAFFECTATION affectationSelect;
             FrmDetailsVisiteur fenetreDetails;
 
-            visiteurSelect = (VISITEUR)bsVisiteursRegion[e.RowIndex];
+            affectationSelect = (VAFFECTATION)bsVisiteursRegion[e.RowIndex];
 
-            fenetreDetails = new FrmDetailsVisiteur(visiteurSelect);
+            fenetreDetails = new FrmDetailsVisiteur(affectationSelect);
 
             fenetreDetails.ShowDialog();
         }
 
         private void btn_Details_Click(object sender, EventArgs e)
         {
-            VISITEUR visiteurSelect;
+            VAFFECTATION affectationSelect;
             FrmDetailsVisiteur fenetreDetails;
 
             if (dgv_Visiteurs.SelectedRows.Count != 0)
             {
 
-                visiteurSelect = (VISITEUR)bsVisiteursRegion[dgv_Visiteurs.SelectedRows[0].Index];
+                affectationSelect = (VAFFECTATION)bsVisiteursRegion[dgv_Visiteurs.SelectedRows[0].Index];
 
-                fenetreDetails = new FrmDetailsVisiteur(visiteurSelect);
+                fenetreDetails = new FrmDetailsVisiteur(affectationSelect);
 
                 fenetreDetails.ShowDialog();
             }

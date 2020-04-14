@@ -120,57 +120,67 @@ namespace GSBCR.UI
         private void btnValider_Click(object sender, EventArgs e)
         {
             bool ajout;
-            if (String.IsNullOrEmpty(txtNum.Text))
-            {
-                ajout = true;
-            }
-            else
-            {
-                ajout = false;
-            }
-            r.RAP_DATVISIT = dtDateVisite.Value;
-            if (cbxMotif.SelectedIndex != -1)
-            {
-                r.RAP_MOTIF = cbxMotif.SelectedValue.ToString();
-            }
-            else
-            {
-                r.RAP_MOTIF = null;
-            }
-            r.RAP_MOTIFAUTRE = txtAutre.Text;
-            r.RAP_CONFIANCE = nupCoef.Value.ToString();
-            r.RAP_PRANUM= Convert.ToInt16(cbxNomPraticien.SelectedValue);
-            r.RAP_BILAN = txtBilan.Text;
-            r.RAP_MED1 = txtMed1.Text;
-            r.RAP_MED2 = txtMed2.Text;
-            if (chbDefinitif.Checked)
-                r.RAP_ETAT = "2";
-            else
-                r.RAP_ETAT = "1";
+
             if (verifier())
             {
-                try
+                if (String.IsNullOrEmpty(txtNum.Text))
                 {
-                    if (ajout)
+                    ajout = true;
+                }
+                else
+                {
+                    ajout = false;
+                }
+                r.RAP_DATVISIT = dtDateVisite.Value;
+                if (cbxMotif.SelectedIndex != -1)
+                {
+                    r.RAP_MOTIF = cbxMotif.SelectedValue.ToString();
+                }
+                else
+                {
+                    r.RAP_MOTIF = null;
+                }
+                r.RAP_MOTIFAUTRE = txtAutre.Text;
+                r.RAP_CONFIANCE = nupCoef.Value.ToString();
+                r.RAP_PRANUM = Convert.ToInt16(cbxNomPraticien.SelectedValue);
+                r.RAP_BILAN = txtBilan.Text;
+                r.RAP_MED1 = txtMed1.Text;
+                r.RAP_MED2 = txtMed2.Text;
+                if (chbDefinitif.Checked)
+                    r.RAP_ETAT = "2";
+                else
+                    r.RAP_ETAT = "1";
+                if (verifier())
+                {
+                    try
                     {
-                        VisiteurManager.CreateRapport(r);
-                        txtNum.Text = r.RAP_NUM.ToString();
+                        if (ajout)
+                        {
+                            VisiteurManager.CreateRapport(r);
+                            txtNum.Text = r.RAP_NUM.ToString();
+                        }
+                        else
+                        {
+                            VisiteurManager.MajRapport(r);
+                        }
+
+                        MessageBox.Show("Rapport de visite n° " + r.RAP_NUM + " enregistré", "Mise à Jour des données", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                        this.Close();
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        VisiteurManager.MajRapport(r);
+
+                        MessageBox.Show("Abandon traitement : " + ex.GetBaseException().Message, "Erreur base de données", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    MessageBox.Show("Rapport de visite n° " + r.RAP_NUM + " enregistré", "Mise à Jour des données", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                    this.Close();
+                    btnValider.Enabled = true;
                 }
-                catch (Exception ex)
-                {
 
-                    MessageBox.Show("Abandon traitement : " + ex.GetBaseException().Message, "Erreur base de données", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-             btnValider.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Veuillez renseigner tout les champs obligatoires", "Saisie invalide", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -224,6 +234,7 @@ namespace GSBCR.UI
                 btnVoirMed2.Enabled = false;
             }
         }
+
         private void btnVoirmed1_Click(object sender, EventArgs e)
         {
             //to do
@@ -255,7 +266,7 @@ namespace GSBCR.UI
         {
             if (cbxNomPraticien.SelectedValue == null)
             {
-                errorProvider1.SetError(this.cbxNomPraticien, "obligatoire");
+                errorProvider1.SetError(this.cbxNomPraticien, "Obligatoire");
             }
             else
             {
@@ -267,11 +278,11 @@ namespace GSBCR.UI
         {
             if (cbxMotif.SelectedValue == null)
             {
-                errorProvider1.SetError(this.cbxMotif, "obligatoire");
+                errorProvider1.SetError(this.cbxMotif, "Obligatoire");
             }
             else if (cbxMotif.SelectedValue.ToString() == "AU" && string.IsNullOrEmpty(txtAutre.Text))
             {
-                    errorProvider1.SetError(this.txtAutre, "obligatoire");
+                    errorProvider1.SetError(this.txtAutre, "Obligatoire");
             }
             else
             {
@@ -287,11 +298,11 @@ namespace GSBCR.UI
             {
                 if (string.IsNullOrEmpty(txtBilan.Text))
                 {
-                    errorProvider1.SetError(this.txtBilan, "obligatoire");
+                    errorProvider1.SetError(this.txtBilan, "Obligatoire");
                 }
-                if (cbxMotif.SelectedValue.ToString() == "AU" && string.IsNullOrEmpty(txtAutre.Text))
+                if (cbxMotif.SelectedIndex != -1 && cbxMotif.SelectedValue.ToString() == "AU" && string.IsNullOrEmpty(txtAutre.Text))
                 {
-                    errorProvider1.SetError(this.txtAutre, "obligatoire");
+                    errorProvider1.SetError(this.txtAutre, "Obligatoire");
                 }
             }
             else
@@ -303,25 +314,49 @@ namespace GSBCR.UI
 
         private bool verifier()
         {
+
             bool ok = true;
+
             if (cbxNomPraticien.SelectedValue == null)
             {
-                errorProvider1.SetError(cbxNomPraticien, "obligatoire");
+                errorProvider1.SetError(cbxNomPraticien, "Obligatoire");
                 ok = false;
             }
             else
             {
                 errorProvider1.SetError(cbxNomPraticien, "");
             }
+
+
             if (cbxMotif.SelectedValue == null)
             {
-                errorProvider1.SetError(this.cbxMotif, "obligatoire");
+                errorProvider1.SetError(this.cbxMotif, "Obligatoire");
                 ok = false;
             }
             else
             {
                 errorProvider1.SetError(cbxMotif, "");
+                if (cbxMotif.SelectedValue.ToString() == "AU" && string.IsNullOrEmpty(txtAutre.Text))
+                {
+                    errorProvider1.SetError(this.txtAutre, "Obligatoire");
+                    ok = false;
+                }
+                else
+                {
+                    errorProvider1.SetError(this.txtAutre, "");
+                }
             }
+
+            if (chbDefinitif.Checked == true && String.IsNullOrEmpty(txtBilan.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(this.txtBilan, "Obligatoire");
+            }
+            else
+            {
+                errorProvider1.SetError(this.txtBilan, "");
+            }
+
             return ok;
         }
     }

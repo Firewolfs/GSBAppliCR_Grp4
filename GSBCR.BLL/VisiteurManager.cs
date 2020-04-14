@@ -28,6 +28,21 @@ namespace GSBCR.BLL
 
         }
 
+
+        /// <summary>
+        /// Permet de charger les informations d'un visiteur
+        /// </summary>
+        /// <param name="matricule">matricule Visiteur</param>
+        /// <returns>objet VISITEUR</returns>
+        public static VISITEUR ChargerInfosVisiteur(string matricule)
+        {
+            VISITEUR vis = new VisiteurDAO().FindById(matricule);
+
+            return vis;
+
+        }
+
+
         /// <summary>
         /// Permet de mettre à jour les informations d'un visiteur grâce à son matricule
         /// </summary>

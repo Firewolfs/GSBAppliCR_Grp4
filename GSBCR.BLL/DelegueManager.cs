@@ -11,25 +11,16 @@ namespace GSBCR.BLL
     public static class DelegueManager
     {
         /// <summary>
-        /// Permet de retourner une liste de visiteurs pour un région à partir de vaffectation
+        /// Permet de retourner une liste de visiteurs pour une région à partir de vaffectation
         /// </summary>
         /// <param name="regionCode">code région</param>
         /// /// <param name="role">Rôle de l'utilisateur (délégué ou responsable)</param>
-        /// <returns>List<VISITEUR></returns>
-        public static List<VISITEUR> ChargerVisiteurByRegion(string regionCode, string role)
+        /// <returns>List<VAFFECTATION></returns>
+        public static List<VAFFECTATION> ChargerAffectationsVisiteursByRegion(string regionCode, string role)
         {
-            List<VISITEUR> lv = new List<VISITEUR>();
-            VISITEUR vis;
             List<VAFFECTATION> lvaff = new VaffectationDAO().FindByRegion(regionCode, role);
-            if (lvaff != null)
-            {
-                foreach (VAFFECTATION vaff in lvaff)
-                {
-                    vis = new VisiteurDAO().FindById(vaff.VIS_MATRICULE);
-                    lv.Add(vis);
-                }
-            }
-            return lv;
+            
+            return lvaff;
         }
 
 
