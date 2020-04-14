@@ -61,6 +61,12 @@ namespace GSBCR.UI
                 //si le rapport existe déjà, initialisation des contrôles avec les valeurs des propriétés du rapport
                 InitRapport();
             }
+            else
+            {
+                r.LeVisiteur = new VISITEUR();
+                r.LeVisiteur.VIS_MATRICULE = r.RAP_MATRICULE;
+            }
+
             dtDateVisite.Focus();
             if (!maj)
             {
@@ -114,7 +120,10 @@ namespace GSBCR.UI
             {
                 chbDefinitif.Checked = true;
             }
-            
+
+            r.LeVisiteur = new VISITEUR();
+            r.LeVisiteur.VIS_MATRICULE = r.RAP_MATRICULE;
+
         }
 
         private void btnValider_Click(object sender, EventArgs e)
@@ -237,12 +246,30 @@ namespace GSBCR.UI
 
         private void btnVoirmed1_Click(object sender, EventArgs e)
         {
-            //to do
+            if (txtMed1.Text != "")
+            {
+
+                FrmConsulterMedicament fenMedoc1 = new FrmConsulterMedicament(r.LeVisiteur, (MEDICAMENT)cbxMed1.SelectedItem);
+                fenMedoc1.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Aucun médicament sélectionné", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            
         }
 
         private void btnVoirMed2_Click(object sender, EventArgs e)
         {
-            //to do
+            if (txtMed2.Text != "")
+            {
+                FrmConsulterMedicament fenMedoc2 = new FrmConsulterMedicament(r.LeVisiteur, (MEDICAMENT)cbxMed2.SelectedItem);
+                fenMedoc2.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Aucun médicament sélectionné", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void btnVoirPatricien_Click(object sender, EventArgs e)
@@ -253,8 +280,9 @@ namespace GSBCR.UI
             if (txtNumPraticien.Text != "")
             {
 
-                consultPrati = new FrmPraticiens(Convert.ToInt32(txtNumPraticien.Text));
+                consultPrati = new FrmPraticiens(r.LeVisiteur, Convert.ToInt32(txtNumPraticien.Text));
                 consultPrati.ShowDialog();
+
             }
             else
             {

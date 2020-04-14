@@ -127,7 +127,7 @@ namespace GSBCR.DAL
         /// <param name="v"></param>
         /// <param name="m"></param>
         /// <returns></returns>
-        public List<RAPPORT_VISITE> FindRapportVisiteByMedicament(VISITEUR v, MEDICAMENT m)
+        public List<RAPPORT_VISITE> FindByMedicament(VISITEUR v, MEDICAMENT m)
         {
             List<RAPPORT_VISITE> lrv = null;
             using (var context = new GSB_visite_LEGUILLIEREntities())
@@ -141,6 +141,30 @@ namespace GSBCR.DAL
             return lrv;
         }
 
+
+        /// <summary>
+        /// Retourne la liste des rapports qui concerne un praticien
+        /// </summary>
+        /// <param name="v">Visiteur connecté</param>
+        /// <param name="p">Praticien concerné</param>
+        /// <returns>List<RAPPORT_VISITE></returns>
+        public List<RAPPORT_VISITE> FindByPraticien(VISITEUR v, PRATICIEN p)
+        {
+
+            List<RAPPORT_VISITE> lrv = null;
+
+            using (var context = new GSB_visite_LEGUILLIEREntities())
+            {
+                var req = from rv in context.RAPPORT_VISITE
+                          where rv.RAP_PRANUM == p.PRA_NUM && rv.RAP_MATRICULE == v.VIS_MATRICULE
+                          select rv;
+
+                lrv = req.ToList<RAPPORT_VISITE>();
+
+            }
+
+            return lrv;
+        }
 
     }
 }

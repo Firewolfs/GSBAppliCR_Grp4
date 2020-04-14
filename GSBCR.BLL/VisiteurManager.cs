@@ -30,20 +30,6 @@ namespace GSBCR.BLL
 
 
         /// <summary>
-        /// Permet de charger les informations d'un visiteur
-        /// </summary>
-        /// <param name="matricule">matricule Visiteur</param>
-        /// <returns>objet VISITEUR</returns>
-        public static VISITEUR ChargerInfosVisiteur(string matricule)
-        {
-            VISITEUR vis = new VisiteurDAO().FindById(matricule);
-
-            return vis;
-
-        }
-
-
-        /// <summary>
         /// Permet de charger un visiteur à partir de son matricule
         /// </summary>
         /// <param name="matricule">Matricule du visiteur</param>
@@ -281,8 +267,24 @@ namespace GSBCR.BLL
         public static List<RAPPORT_VISITE> ChargerRapportVisiteMedicament(VISITEUR v, MEDICAMENT m)
         {
             List<RAPPORT_VISITE> lrv = null;
-            lrv = new RapportVisiteDAO().FindRapportVisiteByMedicament(v, m);
+            lrv = new RapportVisiteDAO().FindByMedicament(v, m);
             return lrv;
+        }
+
+
+        /// <summary>
+        /// Permet de charger la liste des rapports qui concerne un praticien
+        /// </summary>
+        /// <param name="v">Visiteur connecté</param>
+        /// <param name="p">Praticien concerné</param>
+        /// <returns>List<RAPPORT_VISITE></returns>
+        public static List<RAPPORT_VISITE> ChargerRapportsVisitesPraticien(VISITEUR v, PRATICIEN p)
+        {
+
+            List<RAPPORT_VISITE> lrv = null;
+            lrv = new RapportVisiteDAO().FindByPraticien(v, p);
+            return lrv;
+
         }
 
     }

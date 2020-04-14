@@ -16,24 +16,29 @@ namespace GSBCR.UI
     {
 
         private int numPrat = -1;
+        private VISITEUR leUtilisateur;
+        private PRATICIEN lePraticienSelect;
 
-        public FrmPraticiens()
+        public FrmPraticiens(VISITEUR leUtilisateur)
         {
             InitializeComponent();
+            this.leUtilisateur = leUtilisateur;
     
         }
 
-        public FrmPraticiens(int numPraticien)
+        public FrmPraticiens(VISITEUR leUtilisateur, int numPraticien)
         {
 
             InitializeComponent();
-
+            this.leUtilisateur = leUtilisateur;
             numPrat = numPraticien;
 
         }
 
         private void FrmPraticiens_Load(object sender, EventArgs e)
         {
+
+            ucPraticien1.btn_ConsulterRapports.Click += new System.EventHandler(this.btn_ConsulterRapports_Click);
 
             Dictionary<String, PRATICIEN> listePraticiens = new Dictionary<string, PRATICIEN>();
             List<PRATICIEN> lesPraticiens;
@@ -89,8 +94,19 @@ namespace GSBCR.UI
             {
                 KeyValuePair<String, PRATICIEN> p = (KeyValuePair<String, PRATICIEN>)cbx_Praticiens.SelectedItem;
                 ucPraticien1.Prati = p.Value;
+                this.lePraticienSelect = p.Value;
                 ucPraticien1.Visible = true;
             }
+        }
+
+
+        private void btn_ConsulterRapports_Click(object sender, EventArgs e)
+        {
+
+            FrmRapportEnCours fenRapportPraticien = new FrmRapportEnCours(leUtilisateur, lePraticienSelect);
+
+            fenRapportPraticien.ShowDialog();
+
         }
     }
 }

@@ -26,7 +26,7 @@ namespace GSBCR.UC
         /// <param name="laAffectation">Visiteur à afficher</param>
         public void AfficherVisiteur(VAFFECTATION laAffectation)
         {
-            VISITEUR leVisiteur = VisiteurManager.ChargerInfosVisiteur(laAffectation.VIS_MATRICULE);
+            VISITEUR leVisiteur = VisiteurManager.loadVisiteur(laAffectation.VIS_MATRICULE);
             REGION laRegion = VisiteurManager.ChargerUneRegion(laAffectation.REG_CODE);
             List<RAPPORT_VISITE> lesRapportsConsultes = VisiteurManager.ChargerRapportVisiteurFinisEtLus(leVisiteur.VIS_MATRICULE);
 

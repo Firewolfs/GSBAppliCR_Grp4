@@ -35,6 +35,17 @@ namespace GSBCR.UI
             dgvRapportEnCours.DataSource = bsRapportMedicament;
         }
 
+        public FrmRapportEnCours(VISITEUR leVisiteur, PRATICIEN lePraticien)
+        {
+            InitializeComponent();
+            this.leVisiteur = leVisiteur;
+            label2.Text = leVisiteur.VIS_NOM;
+            label3.Text = leVisiteur.Vis_PRENOM;
+            bsRapportsPraticien.DataSource = VisiteurManager.ChargerRapportsVisitesPraticien(leVisiteur, lePraticien);
+            dgvRapportEnCours.DataSource = bsRapportsPraticien;
+
+        }
+
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -42,19 +53,38 @@ namespace GSBCR.UI
 
         private void dgvRapportEnCours_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            RAPPORT_VISITE r = (RAPPORT_VISITE)bsRapportEnCours.Current;
+            RAPPORT_VISITE r = null;
+
+            if (bsRapportEnCours.Count != 0)
+            {
+                r = (RAPPORT_VISITE)bsRapportEnCours.Current;
+            }
+            else if (bsRapportMedicament.Count != 0)
+            {
+                r = (RAPPORT_VISITE)bsRapportMedicament.Current;
+            }
+            else if (bsRapportsPraticien.Count != 0)
+            {
+                r = (RAPPORT_VISITE)bsRapportsPraticien.Current;
+            }
+
             FrmSaisir f = new FrmSaisir(r, true);
             f.ShowDialog();
-            //On relance la liaison de données pour actualiser l'état des rapports
-            if (r.RAP_ETAT == "2")
+
+            if (bsRapportEnCours.Count != 0)
             {
-                //les rapports à l'état 2 ('saisie terminée') ne doivent pas apparaitre dans la liste
-                bsRapportEnCours.RemoveCurrent();
+                //On relance la liaison de données pour actualiser l'état des rapports
+                if (r.RAP_ETAT == "2")
+                {
+                    //les rapports à l'état 2 ('saisie terminée') ne doivent pas apparaitre dans la liste
+                    bsRapportEnCours.RemoveCurrent();
+                }
+                else
+                {
+                    bsRapportEnCours.ResetCurrentItem();
+                }
             }
-            else
-            {
-                bsRapportEnCours.ResetCurrentItem();
-            }
+
         }
 
         private void btnNouveau_Click(object sender, EventArgs e)
