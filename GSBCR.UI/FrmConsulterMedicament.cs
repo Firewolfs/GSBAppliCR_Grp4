@@ -14,10 +14,13 @@ namespace GSBCR.UI
 {
     public partial class FrmConsulterMedicament : Form
     {
+        private MEDICAMENT leMedoc;
+        private VISITEUR leUtilisateur;
 
-        public FrmConsulterMedicament() // voir frm praticien
+        public FrmConsulterMedicament(VISITEUR leUtilisateur) // voir frm praticien
         {
             InitializeComponent();
+            this.leUtilisateur = leUtilisateur;
             List<MEDICAMENT> listMed = VisiteurManager.ChargerMedicaments();
             cbxMedicament.DataSource = listMed;
             cbxMedicament.DisplayMember = "MED_NOMCOMMERCIAL";
@@ -30,6 +33,7 @@ namespace GSBCR.UI
             if (cbxMedicament.SelectedIndex != -1)
             {
                 MEDICAMENT m = (MEDICAMENT)cbxMedicament.SelectedItem;
+                this.leMedoc = m;
                 ucMedicament1.Medic = m;
                 ucMedicament1.Visible = true;
             }
@@ -42,12 +46,7 @@ namespace GSBCR.UI
             cbxMedicament.SelectedIndex = -1;
         }
 
-        //private void btn_voirRapport_Click(object sender, EventArgs e)
-        //{
-        //    String unDepot = ucMedicament1.LeMedicament.MED_DEPOTLEGAL;
-        //    FrmDetailRapport f = new FrmDetailRapport(UserId,unDepot);
-        //    f.ShowDialog();
-        //}
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -56,7 +55,8 @@ namespace GSBCR.UI
 
         private void btn_voirRapport_Click(object sender, EventArgs e)
         {
-            
+            FrmRapportEnCours frmRapport = new FrmRapportEnCours(leUtilisateur, leMedoc);
+            frmRapport.ShowDialog();
            
         }
     }

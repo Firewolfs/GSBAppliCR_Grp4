@@ -25,6 +25,16 @@ namespace GSBCR.UI
             dgvRapportEnCours.DataSource = bsRapportEnCours;
         }
 
+        public FrmRapportEnCours(VISITEUR v, MEDICAMENT leMedicament)
+        {
+            InitializeComponent();
+            leVisiteur = v;
+            label2.Text = leVisiteur.VIS_NOM;
+            label3.Text = leVisiteur.Vis_PRENOM;
+            bsRapportMedicament.DataSource = VisiteurManager.ChargerRapportVisiteMedicament(v, leMedicament);
+            dgvRapportEnCours.DataSource = bsRapportMedicament;
+        }
+
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -99,7 +99,7 @@ namespace GSBCR.UI
 
         private void lesMedicamentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConsulterMedicament Medoc = new FrmConsulterMedicament();
+            FrmConsulterMedicament Medoc = new FrmConsulterMedicament(this.leVisiteur);
             Medoc.ShowDialog();
         }
 
