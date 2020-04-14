@@ -23,10 +23,10 @@ namespace GSBCR.UI
             String login = txtLogin.Text;
             String password = txtMdp.Text;
 
-            VISITEUR v = VisiteurManager.ChargerVisiteur(login, password);
+            VISITEUR v = VisiteurManager.ChargerVisiteur(login, getPassord(password));
             if (v != null) {
                 this.Hide();
-                FrmMenuVisiteur FrmMenuVisiteur = new FrmMenuVisiteur(login, password);
+                FrmMenuVisiteur FrmMenuVisiteur = new FrmMenuVisiteur(login, getPassord(password));
                 FrmMenuVisiteur.ShowDialog();
                 this.Close();
             } else {
@@ -36,6 +36,14 @@ namespace GSBCR.UI
                 label3.Text = "Erreur : login ou mot de passe incorrecte !";
                 label3.Visible = true;
             }
+        }
+
+        private String getPassord(String password) {
+            String p = password;
+
+            for (int i = password.Length; i < 40; i++) { p += " "; }
+
+            return p;
         }
     }
 }

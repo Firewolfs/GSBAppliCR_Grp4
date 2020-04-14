@@ -36,7 +36,6 @@
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnNouveau = new System.Windows.Forms.Button();
             this.dgvRapportEnCours = new System.Windows.Forms.DataGridView();
-            this.bsRapportEnCours = new System.Windows.Forms.BindingSource(this.components);
             this.rAPMATRICULEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rAPNUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rAPPRANUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,12 +56,15 @@
             this.lesEchantillonsOffertsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lePraticienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leVisiteurDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsRapportEnCours = new System.Windows.Forms.BindingSource(this.components);
+            this.bsRapportMedicament = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRapportEnCours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapportEnCours)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapportMedicament)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -180,10 +182,6 @@
             this.dgvRapportEnCours.TabIndex = 0;
             this.dgvRapportEnCours.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRapportEnCours_CellContentClick);
             this.dgvRapportEnCours.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRapportEnCours_CellDoubleClick);
-            // 
-            // bsRapportEnCours
-            // 
-            this.bsRapportEnCours.DataSource = typeof(GSBCR.modele.RAPPORT_VISITE);
             // 
             // rAPMATRICULEDataGridViewTextBoxColumn
             // 
@@ -358,6 +356,10 @@
             this.leVisiteurDataGridViewTextBoxColumn.Visible = false;
             this.leVisiteurDataGridViewTextBoxColumn.Width = 150;
             // 
+            // bsRapportEnCours
+            // 
+            this.bsRapportEnCours.DataSource = typeof(GSBCR.modele.RAPPORT_VISITE);
+            // 
             // FrmRapportEnCours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -374,6 +376,7 @@
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRapportEnCours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapportEnCours)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapportMedicament)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -408,5 +411,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lesEchantillonsOffertsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lePraticienDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn leVisiteurDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bsRapportMedicament;
     }
 }

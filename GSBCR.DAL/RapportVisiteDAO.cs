@@ -121,6 +121,26 @@ namespace GSBCR.DAL
             }
         }
 
+        /// <summary>
+        /// Retourne une liste de rapport en fonction d'un medicament et d'un visiteur
+        /// </summary>
+        /// <param name="v"></param>
+        /// <param name="m"></param>
+        /// <returns></returns>
+        public List<RAPPORT_VISITE> FindRapportVisiteByMedicament(VISITEUR v, MEDICAMENT m)
+        {
+            List<RAPPORT_VISITE> lrv = null;
+            using (var context = new GSB_visite_LEGUILLIEREntities())
+            {
+                var req = from rv in context.RAPPORT_VISITE
+                          where (rv.RAP_MED1 == m.MED_DEPOTLEGAL || rv.RAP_MED2 == m.MED_DEPOTLEGAL) && rv.RAP_MATRICULE == v.VIS_MATRICULE
+                          select rv;
+                lrv = req.ToList<RAPPORT_VISITE>();
+
+            }
+            return lrv;
+        }
+
 
     }
 }
