@@ -55,8 +55,12 @@ namespace GSBCR.UI
 
         private void btn_voirRapport_Click(object sender, EventArgs e)
         {
-            FrmRapportEnCours frmRapport = new FrmRapportEnCours(leUtilisateur, leMedoc);
-            frmRapport.ShowDialog();
+            if (leMedoc != null)
+            {
+                FrmRapportEnCours frmRapport = new FrmRapportEnCours(leUtilisateur, leMedoc);
+                frmRapport.ShowDialog();
+            }
+            
            
         }
     }
