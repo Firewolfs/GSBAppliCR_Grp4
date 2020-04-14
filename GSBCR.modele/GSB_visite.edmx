@@ -141,7 +141,7 @@
           <Property Name="LAB_CODE" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="tel" Type="varchar" MaxLength="15" />
           <Property Name="mail" Type="varchar" MaxLength="255" />
-          <Property Name="vis_mdp" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="vis_mdp" Type="char" MaxLength="40" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
 avertissement 6002: La table/vue 'GSB_visite_LEGUILLIER.dbo.VAFFECTATION' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
@@ -151,11 +151,15 @@ avertissement 6002: La table/vue 'GSB_visite_LEGUILLIER.dbo.VAFFECTATION' n'a pa
             <PropertyRef Name="JJMMAA" />
             <PropertyRef Name="REG_CODE" />
             <PropertyRef Name="TRA_ROLE" />
+            <PropertyRef Name="VIS_NOM" />
+            <PropertyRef Name="Vis_PRENOM" />
           </Key>
           <Property Name="VIS_MATRICULE" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="JJMMAA" Type="datetime" Nullable="false" />
           <Property Name="REG_CODE" Type="nvarchar" MaxLength="2" Nullable="false" />
           <Property Name="TRA_ROLE" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="VIS_NOM" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Vis_PRENOM" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="MEDICAMENT_FK00">
           <End Role="FAMILLE" Type="Self.FAMILLE" Multiplicity="1" />
@@ -387,7 +391,9 @@ avertissement 6002: La table/vue 'GSB_visite_LEGUILLIER.dbo.VAFFECTATION' n'a pa
 [VAFFECTATION].[VIS_MATRICULE] AS [VIS_MATRICULE], 
 [VAFFECTATION].[JJMMAA] AS [JJMMAA], 
 [VAFFECTATION].[REG_CODE] AS [REG_CODE], 
-[VAFFECTATION].[TRA_ROLE] AS [TRA_ROLE]
+[VAFFECTATION].[TRA_ROLE] AS [TRA_ROLE], 
+[VAFFECTATION].[VIS_NOM] AS [VIS_NOM], 
+[VAFFECTATION].[Vis_PRENOM] AS [Vis_PRENOM]
 FROM [dbo].[VAFFECTATION] AS [VAFFECTATION]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="MEDICAMENT_FK00" Association="Self.MEDICAMENT_FK00">
@@ -616,7 +622,7 @@ FROM [dbo].[VAFFECTATION] AS [VAFFECTATION]</DefiningQuery>
           <Property Name="VIS_DATEEMBAUCHE" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="SEC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
           <Property Name="LAB_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="vis_mdp" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="vis_mdp" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="LesRapports" Relationship="Self.RAPPORT_VISITE_FK01" FromRole="VISITEUR" ToRole="RAPPORT_VISITE" />
           <NavigationProperty Name="LeSecteur" Relationship="Self.VISITEUR_FK01" FromRole="VISITEUR" ToRole="SECTEUR" />
           <NavigationProperty Name="LesAffectations" Relationship="Self.TRAVAILLER_FK01" FromRole="VISITEUR" ToRole="TRAVAILLER" />
@@ -629,11 +635,15 @@ FROM [dbo].[VAFFECTATION] AS [VAFFECTATION]</DefiningQuery>
             <PropertyRef Name="JJMMAA" />
             <PropertyRef Name="REG_CODE" />
             <PropertyRef Name="TRA_ROLE" />
+            <PropertyRef Name="VIS_NOM" />
+            <PropertyRef Name="Vis_PRENOM" />
           </Key>
           <Property Name="VIS_MATRICULE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="JJMMAA" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="REG_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TRA_ROLE" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VIS_NOM" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Vis_PRENOM" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="MEDICAMENT_FK00">
           <End Role="FAMILLE" Type="Self.FAMILLE" Multiplicity="1" />
@@ -1110,6 +1120,8 @@ FROM [dbo].[VAFFECTATION] AS [VAFFECTATION]</DefiningQuery>
           <EntitySetMapping Name="VAFFECTATION">
             <EntityTypeMapping TypeName="GSBCR.modele.VAFFECTATION">
               <MappingFragment StoreEntitySet="VAFFECTATION">
+                <ScalarProperty Name="Vis_PRENOM" ColumnName="Vis_PRENOM" />
+                <ScalarProperty Name="VIS_NOM" ColumnName="VIS_NOM" />
                 <ScalarProperty Name="VIS_MATRICULE" ColumnName="VIS_MATRICULE" />
                 <ScalarProperty Name="JJMMAA" ColumnName="JJMMAA" />
                 <ScalarProperty Name="REG_CODE" ColumnName="REG_CODE" />
