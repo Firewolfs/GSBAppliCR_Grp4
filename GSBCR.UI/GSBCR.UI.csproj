@@ -148,6 +148,9 @@
     <EmbeddedResource Include="FrmConsulterMedicament.resx">
       <DependentUpon>FrmConsulterMedicament.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsulterRapportRegion.resx">
+      <DependentUpon>FrmConsulterRapportRegion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmConsulterRapportValide.resx">
       <DependentUpon>FrmConsulterRapportValide.cs</DependentUpon>
     </EmbeddedResource>

@@ -35,8 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.rAPMATRICULEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rAPNUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rAPPRANUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -152,6 +152,15 @@
             this.splitContainer1.TabIndex = 1;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(174, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(711, 20);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "______________________________________________________________________________";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -184,15 +193,7 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1037, 353);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(174, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(711, 20);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "______________________________________________________________________________";
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRapportEnCours_CellContentClick);
             // 
             // rAPMATRICULEDataGridViewTextBoxColumn
             // 

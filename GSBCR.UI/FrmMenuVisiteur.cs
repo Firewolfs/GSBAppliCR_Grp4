@@ -141,5 +141,27 @@ namespace GSBCR.UI
             FrmVisiteurs fenetreVisiteurs = new FrmVisiteurs(leVisiteur);
             fenetreVisiteurs.ShowDialog();
         }
+
+        private void rapportsNonConsultésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<RAPPORT_VISITE> lesRapports = null;
+            try
+            {
+                lesRapports = VisiteurManager.ChargerRapportRegionNonLus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            if (lesRapports != null && lesRapports.Count != 0)
+            {
+                FrmConsulterRapportRegion f = new FrmConsulterRapportRegion(leVisiteur, lesRapports);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Aucun rapport de visite n'a été validé", "Gestion Rapports de visite", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
