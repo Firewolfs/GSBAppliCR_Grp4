@@ -29,6 +29,17 @@ namespace GSBCR.UI
             List<VAFFECTATION> lesAffectationsRegion;
             laAffectationUtilisateur = VisiteurManager.ChargerAffectationVisiteur(leUtilisateur.VIS_MATRICULE);
 
+            if (laAffectationUtilisateur.TRA_ROLE == "Responsable")
+            {
+                btn_Modifier.Enabled = true;
+                btn_Modifier.Visible = true;
+            }
+            else
+            {
+                btn_Modifier.Enabled = false;
+                btn_Modifier.Visible = false;
+            }
+
             lesAffectationsRegion = DelegueManager.ChargerAffectationsVisiteursByRegion(laAffectationUtilisateur.REG_CODE, laAffectationUtilisateur.TRA_ROLE);
 
             bsVisiteursRegion.DataSource = lesAffectationsRegion;
@@ -41,12 +52,12 @@ namespace GSBCR.UI
 
             affectationSelect = (VAFFECTATION)bsVisiteursRegion[e.RowIndex];
 
-            fenetreDetails = new FrmDetailsVisiteur(affectationSelect);
+            fenetreDetails = new FrmDetailsVisiteur(false, affectationSelect, leUtilisateur, laAffectationUtilisateur);
 
             fenetreDetails.ShowDialog();
         }
 
-        private void btn_Details_Click(object sender, EventArgs e)
+        private void btn_Consulter_Click(object sender, EventArgs e)
         {
             VAFFECTATION affectationSelect;
             FrmDetailsVisiteur fenetreDetails;
@@ -56,7 +67,7 @@ namespace GSBCR.UI
 
                 affectationSelect = (VAFFECTATION)bsVisiteursRegion[dgv_Visiteurs.SelectedRows[0].Index];
 
-                fenetreDetails = new FrmDetailsVisiteur(affectationSelect);
+                fenetreDetails = new FrmDetailsVisiteur(false, affectationSelect, leUtilisateur, laAffectationUtilisateur);
 
                 fenetreDetails.ShowDialog();
             }

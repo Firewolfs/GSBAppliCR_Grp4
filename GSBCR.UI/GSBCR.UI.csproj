@@ -83,12 +83,6 @@
     <Compile Include="FrmConsulterRapportRegion.Designer.cs">
       <DependentUpon>FrmConsulterRapportRegion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmConsulterRapportValide.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmConsulterRapportValide.Designer.cs">
-      <DependentUpon>FrmConsulterRapportValide.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,11 +101,11 @@
     <Compile Include="FrmPraticiens.Designer.cs">
       <DependentUpon>FrmPraticiens.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRapportEnCours.cs">
+    <Compile Include="FrmRapports.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRapportEnCours.Designer.cs">
-      <DependentUpon>FrmRapportEnCours.cs</DependentUpon>
+    <Compile Include="FrmRapports.Designer.cs">
+      <DependentUpon>FrmRapports.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSaisir.cs">
       <SubType>Form</SubType>
@@ -148,9 +142,6 @@
     <EmbeddedResource Include="FrmConsulterMedicament.resx">
       <DependentUpon>FrmConsulterMedicament.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmConsulterRapportValide.resx">
-      <DependentUpon>FrmConsulterRapportValide.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,8 +151,8 @@
     <EmbeddedResource Include="FrmPraticiens.resx">
       <DependentUpon>FrmPraticiens.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRapportEnCours.resx">
-      <DependentUpon>FrmRapportEnCours.cs</DependentUpon>
+    <EmbeddedResource Include="FrmRapports.resx">
+      <DependentUpon>FrmRapports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSaisir.resx">
       <DependentUpon>FrmSaisir.cs</DependentUpon>

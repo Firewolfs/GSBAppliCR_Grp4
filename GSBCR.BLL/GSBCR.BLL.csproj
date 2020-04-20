@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DelegueManager.cs" />
+    <Compile Include="ResponsableManager.cs" />
     <Compile Include="VisiteurManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

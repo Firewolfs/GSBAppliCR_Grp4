@@ -227,6 +227,7 @@
             this.gestionÉquipeToolStripMenuItem.Name = "gestionÉquipeToolStripMenuItem";
             this.gestionÉquipeToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.gestionÉquipeToolStripMenuItem.Text = "Gestion équipe";
+            this.gestionÉquipeToolStripMenuItem.Click += new System.EventHandler(this.gestionÉquipeToolStripMenuItem_Click);
             // 
             // statistiquesSecteurToolStripMenuItem
             // 

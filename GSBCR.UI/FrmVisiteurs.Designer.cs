@@ -32,20 +32,21 @@
             this.pnl_Separateur = new System.Windows.Forms.Panel();
             this.lblTitre = new System.Windows.Forms.Label();
             this.dgv_Visiteurs = new System.Windows.Forms.DataGridView();
-            this.pnl_Entete = new System.Windows.Forms.Panel();
-            this.btn_Details = new System.Windows.Forms.Button();
-            this.pnl_Donnees = new System.Windows.Forms.Panel();
-            this.bsVisiteursRegion = new System.Windows.Forms.BindingSource(this.components);
             this.vISMATRICULEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.visPRENOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vISNOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tRAROLEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jJMMAADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rEGCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsVisiteursRegion = new System.Windows.Forms.BindingSource(this.components);
+            this.pnl_Entete = new System.Windows.Forms.Panel();
+            this.btn_Consulter = new System.Windows.Forms.Button();
+            this.pnl_Donnees = new System.Windows.Forms.Panel();
+            this.btn_Modifier = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Visiteurs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteursRegion)).BeginInit();
             this.pnl_Entete.SuspendLayout();
             this.pnl_Donnees.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteursRegion)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Separateur
@@ -96,41 +97,6 @@
             this.dgv_Visiteurs.TabIndex = 29;
             this.dgv_Visiteurs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Visiteurs_CellDoubleClick);
             // 
-            // pnl_Entete
-            // 
-            this.pnl_Entete.Controls.Add(this.btn_Details);
-            this.pnl_Entete.Controls.Add(this.lblTitre);
-            this.pnl_Entete.Controls.Add(this.pnl_Separateur);
-            this.pnl_Entete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_Entete.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Entete.Name = "pnl_Entete";
-            this.pnl_Entete.Size = new System.Drawing.Size(884, 100);
-            this.pnl_Entete.TabIndex = 30;
-            // 
-            // btn_Details
-            // 
-            this.btn_Details.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Details.Location = new System.Drawing.Point(797, 71);
-            this.btn_Details.Name = "btn_Details";
-            this.btn_Details.Size = new System.Drawing.Size(75, 23);
-            this.btn_Details.TabIndex = 29;
-            this.btn_Details.Text = "Détails";
-            this.btn_Details.UseVisualStyleBackColor = true;
-            this.btn_Details.Click += new System.EventHandler(this.btn_Details_Click);
-            // 
-            // pnl_Donnees
-            // 
-            this.pnl_Donnees.Controls.Add(this.dgv_Visiteurs);
-            this.pnl_Donnees.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Donnees.Location = new System.Drawing.Point(0, 100);
-            this.pnl_Donnees.Name = "pnl_Donnees";
-            this.pnl_Donnees.Size = new System.Drawing.Size(884, 350);
-            this.pnl_Donnees.TabIndex = 31;
-            // 
-            // bsVisiteursRegion
-            // 
-            this.bsVisiteursRegion.DataSource = typeof(GSBCR.modele.VAFFECTATION);
-            // 
             // vISMATRICULEDataGridViewTextBoxColumn
             // 
             this.vISMATRICULEDataGridViewTextBoxColumn.DataPropertyName = "VIS_MATRICULE";
@@ -179,6 +145,53 @@
             this.rEGCODEDataGridViewTextBoxColumn.ReadOnly = true;
             this.rEGCODEDataGridViewTextBoxColumn.Visible = false;
             // 
+            // bsVisiteursRegion
+            // 
+            this.bsVisiteursRegion.DataSource = typeof(GSBCR.modele.VAFFECTATION);
+            // 
+            // pnl_Entete
+            // 
+            this.pnl_Entete.Controls.Add(this.btn_Modifier);
+            this.pnl_Entete.Controls.Add(this.btn_Consulter);
+            this.pnl_Entete.Controls.Add(this.lblTitre);
+            this.pnl_Entete.Controls.Add(this.pnl_Separateur);
+            this.pnl_Entete.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_Entete.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Entete.Name = "pnl_Entete";
+            this.pnl_Entete.Size = new System.Drawing.Size(884, 100);
+            this.pnl_Entete.TabIndex = 30;
+            // 
+            // btn_Consulter
+            // 
+            this.btn_Consulter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Consulter.Location = new System.Drawing.Point(797, 71);
+            this.btn_Consulter.Name = "btn_Consulter";
+            this.btn_Consulter.Size = new System.Drawing.Size(75, 23);
+            this.btn_Consulter.TabIndex = 29;
+            this.btn_Consulter.Text = "Consulter";
+            this.btn_Consulter.UseVisualStyleBackColor = true;
+            this.btn_Consulter.Click += new System.EventHandler(this.btn_Consulter_Click);
+            // 
+            // pnl_Donnees
+            // 
+            this.pnl_Donnees.Controls.Add(this.dgv_Visiteurs);
+            this.pnl_Donnees.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Donnees.Location = new System.Drawing.Point(0, 100);
+            this.pnl_Donnees.Name = "pnl_Donnees";
+            this.pnl_Donnees.Size = new System.Drawing.Size(884, 350);
+            this.pnl_Donnees.TabIndex = 31;
+            // 
+            // btn_Modifier
+            // 
+            this.btn_Modifier.Enabled = false;
+            this.btn_Modifier.Location = new System.Drawing.Point(716, 71);
+            this.btn_Modifier.Name = "btn_Modifier";
+            this.btn_Modifier.Size = new System.Drawing.Size(75, 23);
+            this.btn_Modifier.TabIndex = 30;
+            this.btn_Modifier.Text = "Modifier";
+            this.btn_Modifier.UseVisualStyleBackColor = true;
+            this.btn_Modifier.Visible = false;
+            // 
             // FrmVisiteurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,10 +203,10 @@
             this.Text = "FrmVisiteurs";
             this.Load += new System.EventHandler(this.FrmVisiteurs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Visiteurs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteursRegion)).EndInit();
             this.pnl_Entete.ResumeLayout(false);
             this.pnl_Entete.PerformLayout();
             this.pnl_Donnees.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteursRegion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,7 +217,7 @@
         private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.DataGridView dgv_Visiteurs;
         private System.Windows.Forms.Panel pnl_Entete;
-        private System.Windows.Forms.Button btn_Details;
+        private System.Windows.Forms.Button btn_Consulter;
         private System.Windows.Forms.Panel pnl_Donnees;
         private System.Windows.Forms.DataGridViewTextBoxColumn vISMATRICULEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn visPRENOMDataGridViewTextBoxColumn;
@@ -213,5 +226,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn jJMMAADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rEGCODEDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bsVisiteursRegion;
+        private System.Windows.Forms.Button btn_Modifier;
     }
 }

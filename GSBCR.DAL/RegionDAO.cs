@@ -45,5 +45,26 @@ namespace GSBCR.DAL {
 
             return regs;
         }
+
+
+        /// <summary>
+        /// Retourne la liste des régions d'un secteur
+        /// </summary>
+        /// <param name="codeSecteur">Code du secteur des régions</param>
+        /// <returns>List<REGION></returns>
+        public List<REGION> FindBySecteur(string codeSecteur)
+        {
+            List<REGION> regs = null;
+            using (var context = new GSB_visite_LEGUILLIEREntities())
+            {
+                var request = from r in context.REGION
+                              where r.SEC_CODE == codeSecteur
+                              select r;
+
+                regs = request.ToList<REGION>();
+            }
+
+            return regs;
+        }
     }
 }

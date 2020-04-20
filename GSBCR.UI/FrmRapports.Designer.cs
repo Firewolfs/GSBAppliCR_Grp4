@@ -1,6 +1,6 @@
 ﻿namespace GSBCR.UI
 {
-    partial class FrmRapportEnCours
+    partial class FrmRapports
     {
         /// <summary>
         /// Required designer variable.
@@ -56,16 +56,16 @@
             this.lesEchantillonsOffertsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lePraticienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leVisiteurDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsRapportEnCours = new System.Windows.Forms.BindingSource(this.components);
-            this.bsRapportMedicament = new System.Windows.Forms.BindingSource(this.components);
+            this.bsRapports = new System.Windows.Forms.BindingSource(this.components);
+            this.bsRapportsMedicament = new System.Windows.Forms.BindingSource(this.components);
             this.bsRapportsPraticien = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRapportEnCours)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsRapportEnCours)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsRapportMedicament)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapportsMedicament)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapportsPraticien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +88,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvRapportEnCours);
             this.splitContainer1.Size = new System.Drawing.Size(853, 411);
-            this.splitContainer1.SplitterDistance = 98;
+            this.splitContainer1.SplitterDistance = 97;
             this.splitContainer1.TabIndex = 0;
             // 
             // label3
@@ -166,15 +166,14 @@
             this.lesEchantillonsOffertsDataGridViewTextBoxColumn,
             this.lePraticienDataGridViewTextBoxColumn,
             this.leVisiteurDataGridViewTextBoxColumn});
-            this.dgvRapportEnCours.DataSource = this.bsRapportEnCours;
+            this.dgvRapportEnCours.DataSource = this.bsRapports;
             this.dgvRapportEnCours.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRapportEnCours.Location = new System.Drawing.Point(0, 0);
             this.dgvRapportEnCours.Name = "dgvRapportEnCours";
             this.dgvRapportEnCours.RowHeadersWidth = 62;
             this.dgvRapportEnCours.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRapportEnCours.Size = new System.Drawing.Size(853, 309);
+            this.dgvRapportEnCours.Size = new System.Drawing.Size(853, 310);
             this.dgvRapportEnCours.TabIndex = 0;
-            this.dgvRapportEnCours.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRapportEnCours_CellContentClick);
             this.dgvRapportEnCours.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRapportEnCours_CellDoubleClick);
             // 
             // rAPMATRICULEDataGridViewTextBoxColumn
@@ -350,17 +349,17 @@
             this.leVisiteurDataGridViewTextBoxColumn.Visible = false;
             this.leVisiteurDataGridViewTextBoxColumn.Width = 150;
             // 
-            // bsRapportEnCours
+            // bsRapports
             // 
-            this.bsRapportEnCours.DataSource = typeof(GSBCR.modele.RAPPORT_VISITE);
+            this.bsRapports.DataSource = typeof(GSBCR.modele.RAPPORT_VISITE);
             // 
-            // FrmRapportEnCours
+            // FrmRapports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 411);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "FrmRapportEnCours";
+            this.Name = "FrmRapports";
             this.Text = "FrmRapportEnCours";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -368,8 +367,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRapportEnCours)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsRapportEnCours)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsRapportMedicament)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapportsMedicament)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapportsPraticien)).EndInit();
             this.ResumeLayout(false);
 
@@ -382,7 +381,7 @@
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Button btnNouveau;
         private System.Windows.Forms.DataGridView dgvRapportEnCours;
-        private System.Windows.Forms.BindingSource bsRapportEnCours;
+        private System.Windows.Forms.BindingSource bsRapports;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn rAPMATRICULEDataGridViewTextBoxColumn;
@@ -405,7 +404,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lesEchantillonsOffertsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lePraticienDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn leVisiteurDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource bsRapportMedicament;
+        private System.Windows.Forms.BindingSource bsRapportsMedicament;
         private System.Windows.Forms.BindingSource bsRapportsPraticien;
     }
 }
