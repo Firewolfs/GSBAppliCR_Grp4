@@ -208,7 +208,6 @@
             this.rapportsNonConsultésToolStripMenuItem.Name = "rapportsNonConsultésToolStripMenuItem";
             this.rapportsNonConsultésToolStripMenuItem.Size = new System.Drawing.Size(302, 34);
             this.rapportsNonConsultésToolStripMenuItem.Text = "Rapports non consultés";
-            this.rapportsNonConsultésToolStripMenuItem.Click += new System.EventHandler(this.rapportsNonConsultésToolStripMenuItem_Click);
             // 
             // listeDesVisiteursToolStripMenuItem
             // 

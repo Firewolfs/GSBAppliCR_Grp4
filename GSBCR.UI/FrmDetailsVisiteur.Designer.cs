@@ -103,6 +103,7 @@
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Visible = false;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnValider
             // 
@@ -114,6 +115,7 @@
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = true;
             this.btnValider.Visible = false;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // btnModifier
             // 
@@ -418,6 +420,7 @@
             this.btn_Promouvoir.Text = "Promouvoir";
             this.btn_Promouvoir.UseVisualStyleBackColor = true;
             this.btn_Promouvoir.Visible = false;
+            this.btn_Promouvoir.Click += new System.EventHandler(this.btn_Promouvoir_Click);
             // 
             // FrmDetailsVisiteur
             // 

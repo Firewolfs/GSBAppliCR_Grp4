@@ -38,13 +38,13 @@
             this.tRAROLEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jJMMAADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rEGCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsVisiteursRegion = new System.Windows.Forms.BindingSource(this.components);
+            this.bsVisiteurs = new System.Windows.Forms.BindingSource(this.components);
             this.pnl_Entete = new System.Windows.Forms.Panel();
+            this.btn_Modifier = new System.Windows.Forms.Button();
             this.btn_Consulter = new System.Windows.Forms.Button();
             this.pnl_Donnees = new System.Windows.Forms.Panel();
-            this.btn_Modifier = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Visiteurs)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteursRegion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteurs)).BeginInit();
             this.pnl_Entete.SuspendLayout();
             this.pnl_Donnees.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +86,7 @@
             this.tRAROLEDataGridViewTextBoxColumn,
             this.jJMMAADataGridViewTextBoxColumn,
             this.rEGCODEDataGridViewTextBoxColumn});
-            this.dgv_Visiteurs.DataSource = this.bsVisiteursRegion;
+            this.dgv_Visiteurs.DataSource = this.bsVisiteurs;
             this.dgv_Visiteurs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Visiteurs.Location = new System.Drawing.Point(0, 0);
             this.dgv_Visiteurs.MultiSelect = false;
@@ -145,9 +145,9 @@
             this.rEGCODEDataGridViewTextBoxColumn.ReadOnly = true;
             this.rEGCODEDataGridViewTextBoxColumn.Visible = false;
             // 
-            // bsVisiteursRegion
+            // bsVisiteurs
             // 
-            this.bsVisiteursRegion.DataSource = typeof(GSBCR.modele.VAFFECTATION);
+            this.bsVisiteurs.DataSource = typeof(GSBCR.modele.VAFFECTATION);
             // 
             // pnl_Entete
             // 
@@ -160,6 +160,19 @@
             this.pnl_Entete.Name = "pnl_Entete";
             this.pnl_Entete.Size = new System.Drawing.Size(884, 100);
             this.pnl_Entete.TabIndex = 30;
+            // 
+            // btn_Modifier
+            // 
+            this.btn_Modifier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Modifier.Enabled = false;
+            this.btn_Modifier.Location = new System.Drawing.Point(716, 71);
+            this.btn_Modifier.Name = "btn_Modifier";
+            this.btn_Modifier.Size = new System.Drawing.Size(75, 23);
+            this.btn_Modifier.TabIndex = 30;
+            this.btn_Modifier.Text = "Modifier";
+            this.btn_Modifier.UseVisualStyleBackColor = true;
+            this.btn_Modifier.Visible = false;
+            this.btn_Modifier.Click += new System.EventHandler(this.btn_Modifier_Click);
             // 
             // btn_Consulter
             // 
@@ -181,17 +194,6 @@
             this.pnl_Donnees.Size = new System.Drawing.Size(884, 350);
             this.pnl_Donnees.TabIndex = 31;
             // 
-            // btn_Modifier
-            // 
-            this.btn_Modifier.Enabled = false;
-            this.btn_Modifier.Location = new System.Drawing.Point(716, 71);
-            this.btn_Modifier.Name = "btn_Modifier";
-            this.btn_Modifier.Size = new System.Drawing.Size(75, 23);
-            this.btn_Modifier.TabIndex = 30;
-            this.btn_Modifier.Text = "Modifier";
-            this.btn_Modifier.UseVisualStyleBackColor = true;
-            this.btn_Modifier.Visible = false;
-            // 
             // FrmVisiteurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,7 +205,7 @@
             this.Text = "FrmVisiteurs";
             this.Load += new System.EventHandler(this.FrmVisiteurs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Visiteurs)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteursRegion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteurs)).EndInit();
             this.pnl_Entete.ResumeLayout(false);
             this.pnl_Entete.PerformLayout();
             this.pnl_Donnees.ResumeLayout(false);
@@ -225,7 +227,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tRAROLEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jJMMAADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rEGCODEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource bsVisiteursRegion;
+        private System.Windows.Forms.BindingSource bsVisiteurs;
         private System.Windows.Forms.Button btn_Modifier;
     }
 }

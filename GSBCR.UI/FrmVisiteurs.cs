@@ -26,7 +26,6 @@ namespace GSBCR.UI
 
         private void FrmVisiteurs_Load(object sender, EventArgs e)
         {
-            List<VAFFECTATION> lesAffectationsRegion;
             laAffectationUtilisateur = VisiteurManager.ChargerAffectationVisiteur(leUtilisateur.VIS_MATRICULE);
 
             if (laAffectationUtilisateur.TRA_ROLE == "Responsable")
@@ -40,21 +39,19 @@ namespace GSBCR.UI
                 btn_Modifier.Visible = false;
             }
 
-            lesAffectationsRegion = DelegueManager.ChargerAffectationsVisiteursByRegion(laAffectationUtilisateur.REG_CODE, laAffectationUtilisateur.TRA_ROLE);
-
-            bsVisiteursRegion.DataSource = lesAffectationsRegion;
+            AfficherAffectationsVisiteurs();
         }
 
         private void dgv_Visiteurs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             VAFFECTATION affectationSelect;
-            FrmDetailsVisiteur fenetreDetails;
+            FrmDetailsVisiteur fenetreConsult;
 
-            affectationSelect = (VAFFECTATION)bsVisiteursRegion[e.RowIndex];
+            affectationSelect = (VAFFECTATION)bsVisiteurs[e.RowIndex];
 
-            fenetreDetails = new FrmDetailsVisiteur(false, affectationSelect, leUtilisateur, laAffectationUtilisateur);
+            fenetreConsult = new FrmDetailsVisiteur(false, affectationSelect, leUtilisateur, laAffectationUtilisateur, this);
 
-            fenetreDetails.ShowDialog();
+            fenetreConsult.ShowDialog();
         }
 
         private void btn_Consulter_Click(object sender, EventArgs e)
@@ -65,11 +62,48 @@ namespace GSBCR.UI
             if (dgv_Visiteurs.SelectedRows.Count != 0)
             {
 
-                affectationSelect = (VAFFECTATION)bsVisiteursRegion[dgv_Visiteurs.SelectedRows[0].Index];
+                affectationSelect = (VAFFECTATION)bsVisiteurs[dgv_Visiteurs.SelectedRows[0].Index];
 
-                fenetreDetails = new FrmDetailsVisiteur(false, affectationSelect, leUtilisateur, laAffectationUtilisateur);
+                fenetreDetails = new FrmDetailsVisiteur(false, affectationSelect, leUtilisateur, laAffectationUtilisateur, this);
 
                 fenetreDetails.ShowDialog();
+            }
+
+        }
+
+        /// <summary>
+        /// Affiche les affectations des visiteurs dans la datagridview
+        /// </summary>
+        public void AfficherAffectationsVisiteurs()
+        {
+            List<VAFFECTATION> affectationsVisiteurs = null;
+
+            if (laAffectationUtilisateur.TRA_ROLE == "Délégué")
+            {
+                affectationsVisiteurs = DelegueManager.ChargerAffectationsVisiteursByRegion(laAffectationUtilisateur.REG_CODE, laAffectationUtilisateur.TRA_ROLE);
+            }
+            else if (laAffectationUtilisateur.TRA_ROLE == "Responsable")
+            {
+                affectationsVisiteurs = ResponsableManager.ChargerAffectationsVisiteursBySecteur(laAffectationUtilisateur.SEC_CODE, laAffectationUtilisateur.TRA_ROLE);
+            }
+
+            bsVisiteurs.DataSource = affectationsVisiteurs;
+
+        }
+
+        private void btn_Modifier_Click(object sender, EventArgs e)
+        {
+            VAFFECTATION affectationSelect;
+            FrmDetailsVisiteur fenetreModif;
+
+            if (dgv_Visiteurs.SelectedRows.Count != 0)
+            {
+
+                affectationSelect = (VAFFECTATION)bsVisiteurs[dgv_Visiteurs.SelectedRows[0].Index];
+
+                fenetreModif = new FrmDetailsVisiteur(true, affectationSelect, leUtilisateur, laAffectationUtilisateur, this);
+
+                fenetreModif.ShowDialog();
             }
 
         }

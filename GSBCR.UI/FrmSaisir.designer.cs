@@ -114,11 +114,10 @@
             // dtDateVisite
             // 
             this.dtDateVisite.Location = new System.Drawing.Point(134, 90);
-            this.dtDateVisite.MaxDate = new System.DateTime(2020, 4, 7, 0, 0, 0, 0);
             this.dtDateVisite.Name = "dtDateVisite";
             this.dtDateVisite.Size = new System.Drawing.Size(200, 20);
             this.dtDateVisite.TabIndex = 4;
-            this.dtDateVisite.Value = new System.DateTime(2020, 4, 7, 0, 0, 0, 0);
+            this.dtDateVisite.Value = System.DateTime.Now;
             this.dtDateVisite.MaxDate = System.DateTime.Now;
             // 
             // label4

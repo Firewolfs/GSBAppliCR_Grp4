@@ -31,7 +31,7 @@ namespace GSBCR.DAL
         }
 
         /// <summary>
-        /// Permet de retourner une liste d'affectations pour un région en utilisant la vue VAFFECTATION
+        /// Permet de retourner une liste d'affectations pour une région en utilisant la vue VAFFECTATION
         /// </summary>
         /// <param name="regionCode">code région</param>
         /// <param name="role">Rôle de l'utilisateur (délégué ou responsable)</param>
@@ -54,7 +54,7 @@ namespace GSBCR.DAL
                 else if (role == "Responsable")
                 {
                     var req = from vaff in context.VAFFECTATION
-                              where vaff.REG_CODE == regionCode && vaff.TRA_ROLE == "Visiteur" || vaff.TRA_ROLE == "Délégué"
+                              where vaff.REG_CODE == regionCode && (vaff.TRA_ROLE == "Visiteur" || vaff.TRA_ROLE == "Délégué")
                               select vaff;
 
                     lv = req.ToList();
@@ -64,5 +64,42 @@ namespace GSBCR.DAL
             }
             return lv;
         }
+
+
+        /// <summary>
+        /// Permet de retourner une liste d'affectations pour un secteur en utilisant la vue VAFFECTATION
+        /// </summary>
+        /// <param name="secteurCode">code du secteur</param>
+        /// <param name="role">Rôle de l'utilisateur (délégué ou responsable)</param>
+        /// <returns>List<VAFFECTATION></returns>
+        public List<VAFFECTATION> FindBySecteur(string secteurCode, string role)
+        {
+            List<VAFFECTATION> lv = null;
+            using (var context = new GSB_visite_LEGUILLIEREntities())
+            {
+                //désactiver le chargement différé
+                //context.Configuration.LazyLoadingEnabled = false;
+                if (role == "Délégué")
+                {
+                    var req = from vaff in context.VAFFECTATION
+                              where vaff.SEC_CODE == secteurCode && vaff.TRA_ROLE == "Visiteur"
+                              select vaff;
+
+                    lv = req.ToList();
+                }
+                else if (role == "Responsable")
+                {
+                    var req = from vaff in context.VAFFECTATION
+                              where vaff.SEC_CODE == secteurCode && (vaff.TRA_ROLE == "Visiteur" || vaff.TRA_ROLE == "Délégué")
+                              select vaff;
+
+                    lv = req.ToList();
+                }
+
+
+            }
+            return lv;
+        }
+
     }
 }

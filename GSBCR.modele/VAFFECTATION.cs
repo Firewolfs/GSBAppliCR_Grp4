@@ -20,5 +20,6 @@ namespace GSBCR.modele
         public string TRA_ROLE { get; set; }
         public string VIS_NOM { get; set; }
         public string Vis_PRENOM { get; set; }
+        public string SEC_CODE { get; set; }
     }
 }
