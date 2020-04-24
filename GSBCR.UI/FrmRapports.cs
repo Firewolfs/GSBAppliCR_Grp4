@@ -76,5 +76,19 @@ namespace GSBCR.UI
                 bsRapports.Add(r);
             }
         }
+
+        private void FrmRapports_Load(object sender, EventArgs e)
+        {
+            if(this.fonction == 5)
+            {
+                this.label2.Visible = false;
+                this.label3.Visible = false;
+            }
+            else
+            {
+                this.label2.Visible = true;
+                this.label3.Visible = true;
+            }
+        }
     }
 }

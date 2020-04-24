@@ -150,7 +150,9 @@ namespace GSBCR.UI
 
         private void rapportsNonConsultésToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            VAFFECTATION affectUtilisateur = VisiteurManager.ChargerAffectationVisiteur(this.leVisiteur.VIS_MATRICULE);
+            FrmRapports frmRapports = new FrmRapports(this.leVisiteur, DelegueManager.ChargerRapportRegionNonLus(affectUtilisateur.REG_CODE, affectUtilisateur.TRA_ROLE), FrmRapports.NouveauxRapportsRegion);
+            frmRapports.ShowDialog();
         }
     }
 }
