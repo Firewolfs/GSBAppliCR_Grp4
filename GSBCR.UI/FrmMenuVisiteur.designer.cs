@@ -111,7 +111,6 @@
             this.monSecteurToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(982, 33);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
@@ -208,6 +207,7 @@
             this.rapportsNonConsultésToolStripMenuItem.Name = "rapportsNonConsultésToolStripMenuItem";
             this.rapportsNonConsultésToolStripMenuItem.Size = new System.Drawing.Size(302, 34);
             this.rapportsNonConsultésToolStripMenuItem.Text = "Rapports non consultés";
+            this.rapportsNonConsultésToolStripMenuItem.Click += new System.EventHandler(this.rapportsNonConsultésToolStripMenuItem_Click);
             // 
             // listeDesVisiteursToolStripMenuItem
             // 

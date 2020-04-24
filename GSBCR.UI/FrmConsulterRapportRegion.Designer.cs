@@ -79,7 +79,7 @@
             this.dgvRapportEnCours.RowHeadersWidth = 62;
             this.dgvRapportEnCours.Size = new System.Drawing.Size(1037, 355);
             this.dgvRapportEnCours.TabIndex = 0;
-            this.dgvRapportEnCours.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRapportEnCours_CellContentClick);
+            this.dgvRapportEnCours.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRapportEnCours_CellDoubleClick);
             // 
             // label3
             // 
@@ -193,7 +193,7 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1037, 353);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRapportEnCours_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRapportEnCours_CellDoubleClick);
             // 
             // rAPMATRICULEDataGridViewTextBoxColumn
             // 

@@ -147,5 +147,10 @@ namespace GSBCR.UI
             FrmVisiteurs fenetreVisiteurs = new FrmVisiteurs(leVisiteur);
             fenetreVisiteurs.ShowDialog();
         }
+
+        private void rapportsNonConsultésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

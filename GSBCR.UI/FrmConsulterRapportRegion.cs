@@ -25,7 +25,7 @@ namespace GSBCR.UI
             dgvRapportEnCours.DataSource = bsRapportEnCoursRegion;
         }
 
-        private void dgvRapportEnCours_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvRapportEnCours_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             
         }
