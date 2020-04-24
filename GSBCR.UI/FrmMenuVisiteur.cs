@@ -82,7 +82,7 @@ namespace GSBCR.UI
             }
             if (lesRapports != null && lesRapports.Count != 0)
             {
-                FrmRapports f = new FrmRapports(leVisiteur, lesRapports);
+                FrmRapports f = new FrmRapports(leVisiteur, lesRapports, FrmRapports.RapportsEnCoursVisiteurs);
                 f.ShowDialog();
             }
             else
@@ -117,7 +117,7 @@ namespace GSBCR.UI
             }
             if (lesRapports != null && lesRapports.Count != 0)
             {
-                FrmRapports f = new FrmRapports(leVisiteur, lesRapports);
+                FrmRapports f = new FrmRapports(leVisiteur, lesRapports, FrmRapports.RapportsValidesVisiteurs);
                 f.ShowDialog();
             }
             else
@@ -146,6 +146,11 @@ namespace GSBCR.UI
         {
             FrmVisiteurs fenetreVisiteurs = new FrmVisiteurs(leVisiteur);
             fenetreVisiteurs.ShowDialog();
+        }
+
+        private void rapportsNonConsultésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

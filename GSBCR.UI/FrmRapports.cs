@@ -14,36 +14,24 @@ namespace GSBCR.UI
 {
     public partial class FrmRapports : Form
     {
+
+        public const int RapportsEnCoursVisiteurs = 1;
+        public const int RapportsValidesVisiteurs = 2;
+        public const int RapportsMedicaments = 3;
+        public const int RapportPraticiens = 4;
+        public const int NouveauxRapportsRegion = 5;
+
         private VISITEUR leVisiteur;
-        public FrmRapports(VISITEUR v, List<RAPPORT_VISITE> lr)
+        private int fonction;
+        public FrmRapports(VISITEUR v, List<RAPPORT_VISITE> lr, int fonction)
         {
             InitializeComponent();
+            this.fonction = fonction;
             leVisiteur = v;
             label2.Text = leVisiteur.VIS_NOM;
             label3.Text = leVisiteur.Vis_PRENOM;
             bsRapports.DataSource = lr;
-            dgvRapportEnCours.DataSource = bsRapports;
-        }
-
-        public FrmRapports(VISITEUR v, MEDICAMENT leMedicament)
-        {
-            InitializeComponent();
-            leVisiteur = v;
-            label2.Text = leVisiteur.VIS_NOM;
-            label3.Text = leVisiteur.Vis_PRENOM;
-            bsRapportsMedicament.DataSource = VisiteurManager.ChargerRapportVisiteMedicament(v, leMedicament);
-            dgvRapportEnCours.DataSource = bsRapportsMedicament;
-        }
-
-        public FrmRapports(VISITEUR leVisiteur, PRATICIEN lePraticien)
-        {
-            InitializeComponent();
-            this.leVisiteur = leVisiteur;
-            label2.Text = leVisiteur.VIS_NOM;
-            label3.Text = leVisiteur.Vis_PRENOM;
-            bsRapportsPraticien.DataSource = VisiteurManager.ChargerRapportsVisitesPraticien(leVisiteur, lePraticien);
-            dgvRapportEnCours.DataSource = bsRapportsPraticien;
-
+            dgvRapports.DataSource = bsRapports;
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)
@@ -55,23 +43,14 @@ namespace GSBCR.UI
         {
             RAPPORT_VISITE r = null;
 
-            if (bsRapports.Count != 0)
-            {
-                r = (RAPPORT_VISITE)bsRapports.Current;
-            }
-            else if (bsRapportsMedicament.Count != 0)
-            {
-                r = (RAPPORT_VISITE)bsRapportsMedicament.Current;
-            }
-            else if (bsRapportsPraticien.Count != 0)
-            {
-                r = (RAPPORT_VISITE)bsRapportsPraticien.Current;
-            }
+
+            r = (RAPPORT_VISITE)bsRapports.Current;
+
 
             FrmSaisir f = new FrmSaisir(r, true);
             f.ShowDialog();
 
-            if (bsRapports.Count != 0)
+            if (this.fonction == 1)
             {
                 //On relance la liaison de données pour actualiser l'état des rapports
                 if (r.RAP_ETAT == "2")
