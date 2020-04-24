@@ -75,9 +75,9 @@ namespace GSBCR.UI
 
         private void btn_voirRapport_Click(object sender, EventArgs e)
         {
-            if (leMedoc != null)
+            if (leMedocSelect != null)
             {
-                FrmRapports frmRapport = new FrmRapports(leUtilisateur, VisiteurManager.ChargerRapportVisiteMedicament(leUtilisateur, leMedoc), FrmRapports.RapportsMedicaments);
+                FrmRapports frmRapport = new FrmRapports(leUtilisateur, VisiteurManager.ChargerRapportVisiteMedicament(leUtilisateur, leMedocSelect), FrmRapports.RapportsMedicaments);
                 frmRapport.ShowDialog();
             }
             
