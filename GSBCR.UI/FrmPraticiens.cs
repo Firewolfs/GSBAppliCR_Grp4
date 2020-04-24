@@ -103,7 +103,7 @@ namespace GSBCR.UI
         private void btn_ConsulterRapports_Click(object sender, EventArgs e)
         {
 
-            FrmRapports fenRapportPraticien = new FrmRapports(leUtilisateur, lePraticienSelect);
+            FrmRapports fenRapportPraticien = new FrmRapports(leUtilisateur, VisiteurManager.ChargerRapportsVisitesPraticien(leUtilisateur, lePraticienSelect), FrmRapports.RapportPraticiens);
 
             fenRapportPraticien.ShowDialog();
 

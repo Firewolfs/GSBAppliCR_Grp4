@@ -77,7 +77,7 @@ namespace GSBCR.UI
         {
             if (leMedoc != null)
             {
-                FrmRapports frmRapport = new FrmRapports(leUtilisateur, leMedoc);
+                FrmRapports frmRapport = new FrmRapports(leUtilisateur, VisiteurManager.ChargerRapportVisiteMedicament(leUtilisateur, leMedoc), FrmRapports.RapportsMedicaments);
                 frmRapport.ShowDialog();
             }
             

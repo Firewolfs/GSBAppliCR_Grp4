@@ -35,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnNouveau = new System.Windows.Forms.Button();
-            this.dgvRapportEnCours = new System.Windows.Forms.DataGridView();
+            this.dgvRapports = new System.Windows.Forms.DataGridView();
             this.rAPMATRICULEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rAPNUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rAPPRANUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +63,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRapportEnCours)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRapports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapportsMedicament)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapportsPraticien)).BeginInit();
@@ -86,7 +86,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvRapportEnCours);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvRapports);
             this.splitContainer1.Size = new System.Drawing.Size(853, 411);
             this.splitContainer1.SplitterDistance = 97;
             this.splitContainer1.TabIndex = 0;
@@ -139,13 +139,13 @@
             this.btnNouveau.UseVisualStyleBackColor = true;
             this.btnNouveau.Click += new System.EventHandler(this.btnNouveau_Click);
             // 
-            // dgvRapportEnCours
+            // dgvRapports
             // 
-            this.dgvRapportEnCours.AllowUserToAddRows = false;
-            this.dgvRapportEnCours.AllowUserToDeleteRows = false;
-            this.dgvRapportEnCours.AutoGenerateColumns = false;
-            this.dgvRapportEnCours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRapportEnCours.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvRapports.AllowUserToAddRows = false;
+            this.dgvRapports.AllowUserToDeleteRows = false;
+            this.dgvRapports.AutoGenerateColumns = false;
+            this.dgvRapports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRapports.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.rAPMATRICULEDataGridViewTextBoxColumn,
             this.rAPNUMDataGridViewTextBoxColumn,
             this.rAPPRANUMDataGridViewTextBoxColumn,
@@ -166,15 +166,15 @@
             this.lesEchantillonsOffertsDataGridViewTextBoxColumn,
             this.lePraticienDataGridViewTextBoxColumn,
             this.leVisiteurDataGridViewTextBoxColumn});
-            this.dgvRapportEnCours.DataSource = this.bsRapports;
-            this.dgvRapportEnCours.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRapportEnCours.Location = new System.Drawing.Point(0, 0);
-            this.dgvRapportEnCours.Name = "dgvRapportEnCours";
-            this.dgvRapportEnCours.RowHeadersWidth = 62;
-            this.dgvRapportEnCours.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRapportEnCours.Size = new System.Drawing.Size(853, 310);
-            this.dgvRapportEnCours.TabIndex = 0;
-            this.dgvRapportEnCours.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRapportEnCours_CellDoubleClick);
+            this.dgvRapports.DataSource = this.bsRapports;
+            this.dgvRapports.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRapports.Location = new System.Drawing.Point(0, 0);
+            this.dgvRapports.Name = "dgvRapports";
+            this.dgvRapports.RowHeadersWidth = 62;
+            this.dgvRapports.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRapports.Size = new System.Drawing.Size(853, 310);
+            this.dgvRapports.TabIndex = 0;
+            this.dgvRapports.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRapportEnCours_CellDoubleClick);
             // 
             // rAPMATRICULEDataGridViewTextBoxColumn
             // 
@@ -366,7 +366,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRapportEnCours)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRapports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapportsMedicament)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapportsPraticien)).EndInit();
@@ -380,7 +380,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Button btnNouveau;
-        private System.Windows.Forms.DataGridView dgvRapportEnCours;
+        private System.Windows.Forms.DataGridView dgvRapports;
         private System.Windows.Forms.BindingSource bsRapports;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
