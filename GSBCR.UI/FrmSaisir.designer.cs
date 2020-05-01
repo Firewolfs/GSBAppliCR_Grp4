@@ -64,6 +64,7 @@
             this.bsMed2 = new System.Windows.Forms.BindingSource(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnl_Separateur = new System.Windows.Forms.Panel();
+            this.chbConsulte = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nupCoef)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsPraticien)).BeginInit();
@@ -114,11 +115,11 @@
             // dtDateVisite
             // 
             this.dtDateVisite.Location = new System.Drawing.Point(134, 90);
+            this.dtDateVisite.MaxDate = new System.DateTime(2020, 5, 1, 18, 34, 15, 584);
             this.dtDateVisite.Name = "dtDateVisite";
             this.dtDateVisite.Size = new System.Drawing.Size(200, 20);
             this.dtDateVisite.TabIndex = 4;
-            this.dtDateVisite.Value = System.DateTime.Now;
-            this.dtDateVisite.MaxDate = System.DateTime.Now;
+            this.dtDateVisite.Value = new System.DateTime(2020, 5, 1, 18, 34, 15, 584);
             // 
             // label4
             // 
@@ -368,6 +369,17 @@
             this.pnl_Separateur.Size = new System.Drawing.Size(580, 2);
             this.pnl_Separateur.TabIndex = 26;
             // 
+            // chbConsulte
+            // 
+            this.chbConsulte.AutoSize = true;
+            this.chbConsulte.Location = new System.Drawing.Point(22, 478);
+            this.chbConsulte.Name = "chbConsulte";
+            this.chbConsulte.Size = new System.Drawing.Size(67, 17);
+            this.chbConsulte.TabIndex = 27;
+            this.chbConsulte.Text = "Consulté";
+            this.chbConsulte.UseVisualStyleBackColor = true;
+            this.chbConsulte.CheckedChanged += new System.EventHandler(this.chb_Consulte_CheckedChanged);
+            // 
             // FrmSaisir
             // 
             this.AcceptButton = this.btnValider;
@@ -375,6 +387,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnQuitter;
             this.ClientSize = new System.Drawing.Size(653, 586);
+            this.Controls.Add(this.chbConsulte);
             this.Controls.Add(this.pnl_Separateur);
             this.Controls.Add(this.btnVoirPatricien);
             this.Controls.Add(this.txtMatricule);
@@ -451,5 +464,6 @@
         private System.Windows.Forms.Button btnVoirPatricien;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel pnl_Separateur;
+        private System.Windows.Forms.CheckBox chbConsulte;
     }
 }

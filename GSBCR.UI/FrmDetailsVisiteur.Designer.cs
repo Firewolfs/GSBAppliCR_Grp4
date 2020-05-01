@@ -68,10 +68,12 @@
             this.lbl_Matricule = new System.Windows.Forms.Label();
             this.bsRegions = new System.Windows.Forms.BindingSource(this.components);
             this.btn_Promouvoir = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnl_Region.SuspendLayout();
             this.pnl_Secteur.SuspendLayout();
             this.pnl_Ville.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsRegions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Separateur
@@ -153,6 +155,7 @@
             this.btn_ConsulterRapports.TabIndex = 76;
             this.btn_ConsulterRapports.Text = "Consulter";
             this.btn_ConsulterRapports.UseVisualStyleBackColor = true;
+            this.btn_ConsulterRapports.Click += new System.EventHandler(this.btn_ConsulterRapports_Click);
             // 
             // txt_NbRapportsConsultes
             // 
@@ -180,6 +183,7 @@
             this.txt_Telephone.ReadOnly = true;
             this.txt_Telephone.Size = new System.Drawing.Size(230, 20);
             this.txt_Telephone.TabIndex = 73;
+            this.txt_Telephone.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Telephone_Validating);
             // 
             // lbl_Telephone
             // 
@@ -198,6 +202,7 @@
             this.txt_Email.ReadOnly = true;
             this.txt_Email.Size = new System.Drawing.Size(230, 20);
             this.txt_Email.TabIndex = 71;
+            this.txt_Email.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Email_Validating);
             // 
             // lbl_Email
             // 
@@ -292,6 +297,7 @@
             this.txt_Ville.ReadOnly = true;
             this.txt_Ville.Size = new System.Drawing.Size(154, 20);
             this.txt_Ville.TabIndex = 13;
+            this.txt_Ville.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Ville_Validating);
             // 
             // txt_CodePostal
             // 
@@ -301,6 +307,7 @@
             this.txt_CodePostal.ReadOnly = true;
             this.txt_CodePostal.Size = new System.Drawing.Size(70, 20);
             this.txt_CodePostal.TabIndex = 13;
+            this.txt_CodePostal.Validating += new System.ComponentModel.CancelEventHandler(this.txt_CodePostal_Validating);
             // 
             // txt_Prenom
             // 
@@ -422,6 +429,10 @@
             this.btn_Promouvoir.Visible = false;
             this.btn_Promouvoir.Click += new System.EventHandler(this.btn_Promouvoir_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmDetailsVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,6 +481,7 @@
             this.pnl_Ville.ResumeLayout(false);
             this.pnl_Ville.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsRegions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,5 +529,6 @@
         private System.Windows.Forms.ComboBox cbx_Region;
         private System.Windows.Forms.BindingSource bsRegions;
         private System.Windows.Forms.Button btn_Promouvoir;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -68,13 +68,30 @@ namespace GSBCR.UI
             }
 
             dtDateVisite.Focus();
+
             if (!maj)
             {
                 btnValider.Enabled = false;
                 btnValider.Visible = false;
                 lblTitre.Text = "Consultation d'un rapport";
-            }
 
+                this.chbDefinitif.Enabled = false;
+                this.chbDefinitif.Visible = false;
+
+                if (r.RAP_ETAT == "3")
+                {
+                    this.chbConsulte.Checked = true;
+                }
+
+            }
+            else
+            {
+                this.chbDefinitif.Enabled = true;
+                this.chbDefinitif.Visible = true;
+                this.chbConsulte.Enabled = false;
+                this.chbConsulte.Visible = false;
+
+            }
                        
         }
 
@@ -120,9 +137,6 @@ namespace GSBCR.UI
             {
                 chbDefinitif.Checked = true;
             }
-
-            r.LeVisiteur = new VISITEUR();
-            r.LeVisiteur.VIS_MATRICULE = r.RAP_MATRICULE;
 
         }
 
@@ -338,6 +352,18 @@ namespace GSBCR.UI
                 errorProvider1.SetError(txtBilan, "");
                 errorProvider1.SetError(txtAutre, "");
             }
+        }
+
+
+        private void chb_Consulte_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbConsulte.Checked)
+            {
+                r.RAP_ETAT = "3";
+                VisiteurManager.MajRapport(r);
+                chbConsulte.Enabled = false;
+            }
+
         }
 
         private bool verifier()

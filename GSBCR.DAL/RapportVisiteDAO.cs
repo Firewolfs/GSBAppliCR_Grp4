@@ -68,8 +68,15 @@ namespace GSBCR.DAL
                     reqStr += e ;
                 }
                 reqStr += ")";
+
+
                 lesRapports = context.RAPPORT_VISITE.SqlQuery(reqStr).ToList<RAPPORT_VISITE>();
-                
+
+                foreach (RAPPORT_VISITE leRapport in lesRapports)
+                {
+                    leRapport.LeVisiteur = new VisiteurDAO().FindById(leRapport.RAP_MATRICULE);
+                }
+
             } 
             return lesRapports;
         }

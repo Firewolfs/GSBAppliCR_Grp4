@@ -123,6 +123,23 @@ namespace GSBCR.BLL
 
 
         /// <summary>
+        /// Permet de charger tous les rapports à l'état 3 du visiteur
+        /// </summary>
+        /// <param name="m">matricule Visiteur</param>
+        /// <returns>List<RAPPORT_VISITE></returns>
+        public static List<RAPPORT_VISITE> ChargerRapportsConsulteVisiteur(String m)
+        {
+            List<RAPPORT_VISITE> lr;
+            List<string> lm = new List<string>();
+            lm.Add(m);
+            List<int> le = new List<int>();
+            le.Add(3);
+            lr = new RapportVisiteDAO().FindByEtatEtVisiteur(lm, le);
+            return lr;
+        }
+
+
+        /// <summary>
         /// Permet de charger un rapport de visite
         /// </summary>
         /// <param name="m">matricule Visiteur</param>

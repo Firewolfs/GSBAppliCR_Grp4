@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GSBCR.BLL;
@@ -191,28 +192,190 @@ namespace GSBCR.UI
         private void btnValider_Click(object sender, EventArgs e)
         {
 
-            try
+            if (verifier())
             {
-                if (txt_Telephone.Text != leVisiteur.tel || txt_Email.Text != leVisiteur.mail || txt_Adresse.Text != leVisiteur.VIS_ADRESSE
-                    || txt_CodePostal.Text != leVisiteur.VIS_CP || txt_Ville.Text != leVisiteur.VIS_VILLE)
+                try
                 {
-                    VisiteurManager.updateVisiteur(leVisiteur.VIS_MATRICULE, txt_Adresse.Text, txt_CodePostal.Text, txt_Ville.Text, txt_Telephone.Text, txt_Email.Text);
+                    if (txt_Telephone.Text != leVisiteur.tel || txt_Email.Text != leVisiteur.mail || txt_Adresse.Text != leVisiteur.VIS_ADRESSE
+                        || txt_CodePostal.Text != leVisiteur.VIS_CP || txt_Ville.Text != leVisiteur.VIS_VILLE)
+                    {
+                        VisiteurManager.updateVisiteur(leVisiteur.VIS_MATRICULE, txt_Adresse.Text, txt_CodePostal.Text, txt_Ville.Text, txt_Telephone.Text, txt_Email.Text);
+                    }
+
+                    if (txt_RegionCode.Text != laAffectation.REG_CODE || txt_Role.Text != laAffectation.TRA_ROLE)
+                    {
+                        ResponsableManager.MettreAjourAffectationVisiteur(leVisiteur.VIS_MATRICULE, txt_RegionCode.Text, dtp_DateAffectation.Value, txt_Role.Text);
+                    }
+
+                    MessageBox.Show("Visiteur mis à jour avec succès", "Mise à jour terminé", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Echec de la mise à jour", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                if (txt_RegionCode.Text != laAffectation.REG_CODE || txt_Role.Text != laAffectation.TRA_ROLE)
-                {
-                    ResponsableManager.MettreAjourAffectationVisiteur(leVisiteur.VIS_MATRICULE, txt_RegionCode.Text, dtp_DateAffectation.Value, txt_Role.Text);
-                }
-
-                MessageBox.Show("Visiteur mis à jour avec succès", "Mise à jour terminé", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                formParent.AfficherAffectationsVisiteurs();
+                this.Close();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Echec de la mise à jour", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Veuillez renseignez tous les champs obligatoire au bon format", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            formParent.AfficherAffectationsVisiteurs();
-            this.Close();
+
+        }
+
+        private void btn_ConsulterRapports_Click(object sender, EventArgs e)
+        {
+            FrmRapports frm = new FrmRapports(leVisiteur, VisiteurManager.ChargerRapportsConsulteVisiteur(leVisiteur.VIS_MATRICULE), FrmRapports.RapportsConsultesVisiteurs);
+            frm.ShowDialog();
+        }
+
+        private void txt_Email_Validating(object sender, CancelEventArgs e)
+        {
+            Regex rgxMail = new Regex(@"^([\w]+)@([\w]+)\.([\w]+)$");
+
+            if (txt_Email.Text == "")
+            {
+                errorProvider1.SetError(txt_Email, "Obligatoire");
+            }
+            else if (!rgxMail.IsMatch(txt_Email.Text))
+            {
+                errorProvider1.SetError(txt_Email, "Format incorrect");
+            }
+            else
+            {
+                errorProvider1.SetError(txt_Email, "");
+            }
+        }
+
+        private void txt_Telephone_Validating(object sender, CancelEventArgs e)
+        {
+            Regex rgxPhone = new Regex(@"[0-9]{10}");
+
+            if (txt_Telephone.Text == "")
+            {
+                errorProvider1.SetError(txt_Telephone, "Obligatoire");
+            }
+            else if (!rgxPhone.IsMatch(txt_Telephone.Text))
+            {
+                errorProvider1.SetError(txt_Telephone, "Format incorrect");
+            }
+            else
+            {
+                errorProvider1.SetError(txt_Telephone, "");
+            }
+        }
+
+        private void txt_CodePostal_Validating(object sender, CancelEventArgs e)
+        {
+            Regex rgxCp = new Regex(@"[0-9]{5}");
+
+            if (txt_CodePostal.Text == "")
+            {
+                errorProvider1.SetError(txt_CodePostal, "Obligatoire");
+            }
+            else if (!rgxCp.IsMatch(txt_CodePostal.Text))
+            {
+                errorProvider1.SetError(txt_CodePostal, "Format incorrect");
+            }
+            else
+            {
+                errorProvider1.SetError(txt_CodePostal, "");
+            }
+        }
+
+        private void txt_Ville_Validating(object sender, CancelEventArgs e)
+        {
+            Regex rgxTown = new Regex(@"[A-Z]{1,30}");
+
+            if (txt_Ville.Text == "")
+            {
+                errorProvider1.SetError(txt_Ville, "Obligatoire");
+            }
+            else if (!rgxTown.IsMatch(txt_Ville.Text))
+            {
+                errorProvider1.SetError(txt_Ville, "Format incorrect");
+            }
+            else
+            {
+                errorProvider1.SetError(txt_Ville, "");
+            }
+        }
+
+        private bool verifier()
+        {
+            bool ok = true;
+            Regex rgxCp = new Regex(@"[0-9]{5}");
+            Regex rgxTown = new Regex(@"[A-Z]{1,30}");
+            Regex rgxPhone = new Regex(@"[0-9]{10}");
+            Regex rgxMail = new Regex(@"^([\w]+)@([\w]+)\.([\w]+)$");
+
+
+            if (txt_Email.Text == "")
+            {
+                errorProvider1.SetError(txt_Email, "Obligatoire");
+                ok = false;
+            }
+            else if (!rgxMail.IsMatch(txt_Email.Text))
+            {
+                errorProvider1.SetError(txt_Email, "Format incorrect");
+                ok = false;
+            }
+            else
+            {
+                errorProvider1.SetError(txt_Email, "");
+            }
+
+
+            if (txt_Telephone.Text == "")
+            {
+                errorProvider1.SetError(txt_Telephone, "Obligatoire");
+                ok = false;
+            }
+            else if (!rgxPhone.IsMatch(txt_Telephone.Text))
+            {
+                errorProvider1.SetError(txt_Telephone, "Format incorrect");
+                ok = false;
+            }
+            else
+            {
+                errorProvider1.SetError(txt_Telephone, "");
+            }
+
+
+            if (txt_CodePostal.Text == "")
+            {
+                errorProvider1.SetError(txt_CodePostal, "Obligatoire");
+                ok = false;
+            }
+            else if (!rgxCp.IsMatch(txt_CodePostal.Text))
+            {
+                errorProvider1.SetError(txt_CodePostal, "Format incorrect");
+                ok = false;
+            }
+            else
+            {
+                errorProvider1.SetError(txt_CodePostal, "");
+            }
+
+
+            if (txt_Ville.Text == "")
+            {
+                errorProvider1.SetError(txt_Ville, "Obligatoire");
+                ok = false;
+            }
+            else if (!rgxTown.IsMatch(txt_Ville.Text))
+            {
+                errorProvider1.SetError(txt_Ville, "Format incorrect");
+                ok = false;
+            }
+            else
+            {
+                errorProvider1.SetError(txt_Ville, "");
+            }
+
+            return ok;
         }
     }
 }

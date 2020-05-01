@@ -77,12 +77,6 @@
     <Compile Include="FrmConsulterMedicament.Designer.cs">
       <DependentUpon>FrmConsulterMedicament.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmConsulterRapportRegion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmConsulterRapportRegion.Designer.cs">
-      <DependentUpon>FrmConsulterRapportRegion.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,10 +174,14 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\FrmRapports.datasource" />
     <None Include="Properties\DataSources\GSBCR.BLL.Manager.datasource" />
     <None Include="Properties\DataSources\GSBCR.DC.RapportVisite.datasource" />
     <None Include="Properties\DataSources\GSBCR.modele.RAPPORT_VISITE.datasource" />
     <None Include="Properties\DataSources\GSBCR.modele.VAFFECTATION1.datasource" />
+    <None Include="Properties\DataSources\tableRapportsVisites.datasource" />
+    <None Include="Properties\DataSources\TableRapportsVisites1.datasource" />
+    <None Include="Properties\DataSources\TableRapportsVisites2.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
