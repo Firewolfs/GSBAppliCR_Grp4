@@ -59,10 +59,12 @@
             // 
             // txtDepot
             // 
+            this.txtDepot.BackColor = System.Drawing.Color.White;
             this.txtDepot.CausesValidation = false;
             this.txtDepot.Location = new System.Drawing.Point(188, 48);
             this.txtDepot.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDepot.Name = "txtDepot";
+            this.txtDepot.ReadOnly = true;
             this.txtDepot.Size = new System.Drawing.Size(272, 26);
             this.txtDepot.TabIndex = 1;
             this.txtDepot.TabStop = false;
@@ -79,10 +81,12 @@
             // 
             // txtNomCom
             // 
+            this.txtNomCom.BackColor = System.Drawing.Color.White;
             this.txtNomCom.CausesValidation = false;
             this.txtNomCom.Location = new System.Drawing.Point(188, 92);
             this.txtNomCom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNomCom.Name = "txtNomCom";
+            this.txtNomCom.ReadOnly = true;
             this.txtNomCom.Size = new System.Drawing.Size(272, 26);
             this.txtNomCom.TabIndex = 3;
             this.txtNomCom.TabStop = false;
@@ -99,20 +103,24 @@
             // 
             // txtCodeFam
             // 
+            this.txtCodeFam.BackColor = System.Drawing.Color.White;
             this.txtCodeFam.CausesValidation = false;
             this.txtCodeFam.Location = new System.Drawing.Point(4, 5);
             this.txtCodeFam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCodeFam.Name = "txtCodeFam";
+            this.txtCodeFam.ReadOnly = true;
             this.txtCodeFam.Size = new System.Drawing.Size(74, 26);
             this.txtCodeFam.TabIndex = 0;
             this.txtCodeFam.TabStop = false;
             // 
             // txtLibelFam
             // 
+            this.txtLibelFam.BackColor = System.Drawing.Color.White;
             this.txtLibelFam.CausesValidation = false;
             this.txtLibelFam.Location = new System.Drawing.Point(78, 51);
             this.txtLibelFam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtLibelFam.Name = "txtLibelFam";
+            this.txtLibelFam.ReadOnly = true;
             this.txtLibelFam.Size = new System.Drawing.Size(202, 26);
             this.txtLibelFam.TabIndex = 1;
             this.txtLibelFam.TabStop = false;
@@ -139,11 +147,13 @@
             // 
             // txtCompo
             // 
+            this.txtCompo.BackColor = System.Drawing.Color.White;
             this.txtCompo.CausesValidation = false;
             this.txtCompo.Location = new System.Drawing.Point(708, 20);
             this.txtCompo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCompo.Multiline = true;
             this.txtCompo.Name = "txtCompo";
+            this.txtCompo.ReadOnly = true;
             this.txtCompo.Size = new System.Drawing.Size(326, 127);
             this.txtCompo.TabIndex = 8;
             this.txtCompo.TabStop = false;
@@ -160,11 +170,13 @@
             // 
             // txtEffect
             // 
+            this.txtEffect.BackColor = System.Drawing.Color.White;
             this.txtEffect.CausesValidation = false;
             this.txtEffect.Location = new System.Drawing.Point(708, 183);
             this.txtEffect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEffect.Multiline = true;
             this.txtEffect.Name = "txtEffect";
+            this.txtEffect.ReadOnly = true;
             this.txtEffect.Size = new System.Drawing.Size(326, 127);
             this.txtEffect.TabIndex = 10;
             this.txtEffect.TabStop = false;
@@ -181,11 +193,13 @@
             // 
             // txtContreIndic
             // 
+            this.txtContreIndic.BackColor = System.Drawing.Color.White;
             this.txtContreIndic.CausesValidation = false;
             this.txtContreIndic.Location = new System.Drawing.Point(708, 346);
             this.txtContreIndic.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtContreIndic.Multiline = true;
             this.txtContreIndic.Name = "txtContreIndic";
+            this.txtContreIndic.ReadOnly = true;
             this.txtContreIndic.Size = new System.Drawing.Size(326, 132);
             this.txtContreIndic.TabIndex = 12;
             this.txtContreIndic.TabStop = false;
@@ -202,10 +216,12 @@
             // 
             // txtPrix
             // 
+            this.txtPrix.BackColor = System.Drawing.Color.White;
             this.txtPrix.CausesValidation = false;
             this.txtPrix.Location = new System.Drawing.Point(188, 290);
             this.txtPrix.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPrix.Name = "txtPrix";
+            this.txtPrix.ReadOnly = true;
             this.txtPrix.Size = new System.Drawing.Size(148, 26);
             this.txtPrix.TabIndex = 14;
             this.txtPrix.TabStop = false;
