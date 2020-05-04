@@ -62,6 +62,7 @@ namespace GSBCR.UI
             {
                 cbxMedicament.SelectedIndex = -1;
                 ucMedicament1.Visible = false;
+                this.leMedocSelect = null;
             }
 
         }

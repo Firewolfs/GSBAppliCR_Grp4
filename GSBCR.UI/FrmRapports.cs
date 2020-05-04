@@ -205,6 +205,37 @@ namespace GSBCR.UI
                 this.btnNouveau.Enabled = false;
                 this.btnNouveau.Visible = false;
             }
+
+            switch (this.fonction)
+            {
+                case 1:
+                    this.label1.Text = "Vos rapports en cours";
+                    break;
+
+                case 2:
+                    this.label1.Text = "Vos rapports validés";
+                    break;
+
+                case 3:
+                    this.label1.Text = "Les rapports du médicaments";
+                    break;
+
+                case 4:
+                    this.label1.Text = "Les rapports du praticiens";
+                    break;
+
+                case 5:
+                    this.label1.Text = "Les nouveaux rapports";
+                    break;
+
+                case 6:
+                    this.label1.Text = "Les rapports du visiteur";
+                    break;
+
+                default:
+                    this.label1.Text = "Les rapports de visites";
+                    break;
+            }
         }
 
         private void dgv_Rapports_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
