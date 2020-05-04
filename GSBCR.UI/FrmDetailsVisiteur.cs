@@ -233,7 +233,7 @@ namespace GSBCR.UI
 
         private void txt_Email_Validating(object sender, CancelEventArgs e)
         {
-            Regex rgxMail = new Regex(@"^([\w]+)@([\w]+)\.([\w]+)$");
+            Regex rgxMail = new Regex(@"^([\w.-_]+)@([\w-_]+)\.([\w]+)$");
 
             if (txt_Email.Text == "")
             {
@@ -309,7 +309,7 @@ namespace GSBCR.UI
             Regex rgxCp = new Regex(@"[0-9]{5}");
             Regex rgxTown = new Regex(@"[A-Z]{1,30}");
             Regex rgxPhone = new Regex(@"[0-9]{10}");
-            Regex rgxMail = new Regex(@"^([\w]+)@([\w]+)\.([\w]+)$");
+            Regex rgxMail = new Regex(@"^([\w.-_]+)@([\w-_]+)\.([\w]+)$");
 
 
             if (txt_Email.Text == "")
