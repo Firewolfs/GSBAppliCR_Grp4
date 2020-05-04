@@ -16,7 +16,7 @@ namespace GSBCR.UI {
         private Regex rgxCp = new Regex(@"[0-9]{5}");
         private Regex rgxTown = new Regex(@"[A-Z]{1,30}");
         private Regex rgxPhone = new Regex(@"[0-9]{10}");
-        private Regex rgxMail = new Regex(@"^([\w]+)@([\w]+)\.([\w]+)$");
+        private Regex rgxMail = new Regex(@"^([\w.-_]+)@([\w-_]+)\.([\w]+)$");
 
         public FrmUpdatePersoInfo(VISITEUR v) {
             InitializeComponent();
